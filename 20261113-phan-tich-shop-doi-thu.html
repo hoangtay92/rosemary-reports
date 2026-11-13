@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phân tích shop đối thủ Shopee — Rosemary | 13/11/2026</title>
+<meta name="description" content="Tổng hợp 6 shop nước hoa bán chạy nhất trên Shopee: top sản phẩm, giá niêm yết, giá sau giảm, mã ưu đãi; phân khúc, đối chiếu kho Rosemary và shortlist mùi nên bổ sung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F1EA; --charcoal:#2B2B2B; --green:#5E7563; --green-soft:#e7ede6;
+    --bg:#F5F1EA; --card:#FFFFFF; --text:#2B2B2B; --muted:#6E6A5E; --border:#E3DDCF;
+    --accent:#5E7563; --accent-text:#FFFFFF; --chip:#EFEAE0; --warn-bg:#FBF3DC; --warn-text:#7A5B00;
+    --table-head:#F0EBDF; --link:#3F5A4A; --shadow:0 1px 3px rgba(43,43,43,.08);
+  }
+  [data-theme="dark"]{
+    --bg:#1C1E1B; --card:#262926; --text:#ECE7DB; --muted:#A9A294; --border:#3A3D38;
+    --accent:#8FAE97; --accent-text:#1C1E1B; --chip:#31352F; --warn-bg:#3A3220; --warn-text:#F2CE5F;
+    --table-head:#2E332D; --link:#A9C6B0; --shadow:0 1px 3px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.65;transition:background .25s,color .25s}
+  a{color:var(--link)}
+  .theme-toggle{position:fixed;top:16px;right:16px;z-index:100;display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--text);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
+  .theme-toggle:hover{border-color:var(--accent)}
+  .wrap{max-width:1020px;margin:0 auto;padding:72px 20px 64px}
+  header{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:28px}
+  .brand{font-family:Lora,Georgia,serif;font-size:15px;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);font-weight:700}
+  h1{font-family:Lora,Georgia,serif;font-size:34px;line-height:1.25;margin:12px 0 8px}
+  .sub{color:var(--muted);font-size:16px;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .chip{background:var(--chip);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+  h2{font-family:Lora,Georgia,serif;font-size:24px;margin:44px 0 12px;padding-top:8px}
+  h3{font-size:18px;margin:28px 0 8px}
+  h3 .shop-link{font-size:13px;font-weight:500}
+  p{margin:10px 0}
+  .keybox{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow)}
+  .keybox p{margin:6px 0}
+  .warn{background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:10px 14px;font-size:14px;margin:12px 0}
+  .seg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:720px){.seg{grid-template-columns:1fr} h1{font-size:27px}}
+  .seg-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+  .seg-card h4{margin:0 0 6px;font-size:16px}
+  .seg-card p{margin:4px 0;font-size:14.5px}
+  .seg-card .tag{display:inline-block;background:var(--accent);color:var(--accent-text);font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;margin-bottom:8px}
+  .table-wrap{overflow-x:auto;background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:640px}
+  th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+  th{background:var(--table-head);font-size:13px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+  tr:last-child td{border-bottom:none}
+  td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;border-radius:999px;padding:2px 10px;font-size:12.5px;font-weight:700;white-space:nowrap}
+  .pill.high{background:#dcead9;color:#2c4a2e}
+  [data-theme="dark"] .pill.high{background:#2c442e;color:#bfe3c2}
+  .pill.med{background:#f3e8c8;color:#6b5200}
+  [data-theme="dark"] .pill.med{background:#4a3f1e;color:#f2d67c}
+  .pill.bait{background:#e3e8f5;color:#2c3e6b}
+  [data-theme="dark"] .pill.bait{background:#2c3550;color:#b9c8f2}
+  ul{margin:8px 0;padding-left:22px}
+  li{margin:5px 0}
+  .voucher{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+  .voucher span{background:var(--chip);border:1px dashed var(--accent);border-radius:8px;padding:6px 10px;font-size:13.5px}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid var(--border);color:var(--muted);font-size:13.5px}
+  .toc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 20px;margin:20px 0}
+  .toc a{display:block;padding:3px 0;text-decoration:none}
+  .toc a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Chuyển chế độ sáng / tối">🌙 Dark mode</button>
+
+<div class="wrap">
+  <header>
+    <div class="brand">Rosemary · Mùi hương cho từng khoảnh khắc</div>
+    <h1>Phân tích shop đối thủ trên Shopee</h1>
+    <p class="sub">Top sản phẩm bán chạy, giá niêm yết, giá sau giảm và mã ưu đãi của các shop nước hoa bán chạy nhất — đối chiếu với kho Rosemary và đánh giá mùi nên bổ sung.</p>
+    <div class="meta">
+      <span class="chip">📅 Kiểm tra chiều 13/11/2026</span>
+      <span class="chip">🏬 6 shop đạt chuẩn</span>
+      <span class="chip">🧴 60 sản phẩm bán chạy</span>
+      <span class="chip">🎟️ Mã ưu đãi từng shop</span>
+    </div>
+  </header>
+
+  <div class="toc">
+    <strong>Mục lục</strong>
+    <a href="#ket-luan">1 · Kết luận chính</a>
+    <a href="#phan-khuc">2 · Phân khúc 6 shop</a>
+    <a href="#so-sanh">3 · Bảng so sánh 6 shop</a>
+    <a href="#chi-tiet">4 · Top sản phẩm &amp; mã ưu đãi từng shop</a>
+    <a href="#loai">5 · Shop bị loại khỏi so sánh</a>
+    <a href="#doi-chieu">6 · Đối chiếu với kho Rosemary</a>
+    <a href="#shortlist">7 · Shortlist mùi nên bổ sung</a>
+    <a href="#han-che">8 · Hạn chế của dữ liệu</a>
+  </div>
+
+  <h2 id="ket-luan">1 · Kết luận chính</h2>
+  <div class="keybox">
+    <p><strong>Rosemary thuộc nhóm premium, giá cạnh tranh được, nhưng followers chỉ 653</strong> so với 24k–282k của đối thủ — discovery mới là nút thắt, không phải giá hay sản phẩm.</p>
+    <p><strong>Khoảng trống lớn nhất:</strong> Rosemary thiếu hẳn nhóm nữ cao cấp (Narciso, Delina, Bright Crystal) và nhóm nam designer bán chạy (Montblanc Signature, Le Male Le Parfum), trong khi DIP + Odyssey đã mạnh.</p>
+    <p><strong>Cơ hội rõ nhất:</strong> Armaf Club de Nuit (Man + Woman) — Rosemary đã mạnh về Armaf, nhu cầu đã được chứng minh ở mọi phân khúc.</p>
+    <p><strong>Voucher Rosemary (ROSE200–500):</strong> mức vào đơn 200k thấp hơn hầu hết đối thủ (250–599k), hợp với AOV 387k; nhưng giảm tối đa 5–20k nhỏ hơn đối thủ (15–70k).</p>
+  </div>
+
+  <h2 id="phan-khuc">2 · Phân khúc 6 shop</h2>
+  <div class="seg">
+    <div class="seg-card">
+      <span class="tag">Premium chính hãng</span>
+      <h4>The Authen Perfume · Blume</h4>
+      <p>Giá cao, lấy tin cậy làm điểm bán. Chiết 10ml 192–560k. <strong>Rosemary ở đây</strong> (5.0★, 653 followers, chiết 120–560k).</p>
+    </div>
+    <div class="seg-card">
+      <span class="tag">Số lượng lớn · giá đồng đều</span>
+      <h4>N.EMBYVN · CHIC PERFUME</h4>
+      <p>Shopee Mall, chiết 10ml gần như đồng giá ~230k, đóng chai riêng của shop. Lượt bán/tháng cao gấp nhiều lần nhóm premium.</p>
+    </div>
+    <div class="seg-card">
+      <span class="tag">Niche cao cấp · giá thấp bất thường</span>
+      <h4>T.H.E.S.C.E.N.T</h4>
+      <p>Diptyque / Byredo / Jo Malone 10ml chỉ 145–165k, lệch hẳn nhóm premium. Quy mô lớn (59,7k followers, 6 năm) nên vẫn đưa vào — ghi nhận, không đua theo.</p>
+    </div>
+    <div class="seg-card">
+      <span class="tag">Hãng chính thức</span>
+      <h4>ARMAF Official Store</h4>
+      <p>Chỉ bán Armaf: mini, full-size, body spray, sữa tắm. Tham chiếu giá gốc và nhu cầu dòng Armaf (body spray Odyssey 10k+ lượt bán, mini CDN 10ml 198k).</p>
+    </div>
+  </div>
+
+  <h2 id="so-sanh">3 · Bảng so sánh 6 shop</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Shop</th><th>Followers</th><th>Rating</th><th>Giá chiết 10ml</th><th>Mã ưu đãi của shop</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://shopee.vn/theauthenperfume" target="_blank" rel="noopener">The Authen Perfume</a></td><td class="num">79,6k</td><td class="num">4.9★</td><td class="num">340–560k</td><td>Giảm 15k, đơn 599k, hết 30/11/2026</td></tr>
+        <tr><td><a href="https://shopee.vn/shop/327667816" target="_blank" rel="noopener">Blume</a></td><td class="num">36,7k</td><td class="num">5.0★</td><td class="num">192–360k</td><td>Giảm 20–70k, đơn 499k–1.999k</td></tr>
+        <tr><td><a href="https://shopee.vn/shop/389308465" target="_blank" rel="noopener">T.H.E.S.C.E.N.T</a></td><td class="num">59,7k</td><td class="num">4.9★</td><td class="num">145–280k</td><td>Không có voucher; mua 2 giảm 2%, mua 3 giảm 3%</td></tr>
+        <tr><td><a href="https://shopee.vn/shop/1007141364" target="_blank" rel="noopener">ARMAF Official</a></td><td class="num">282k</td><td class="num">4.9★</td><td class="num">Mini 198k · Full 920k–1.246k</td><td>Chỉ badge voucher trên ảnh sản phẩm</td></tr>
+        <tr><td><a href="https://shopee.vn/m_perfume_luxury" target="_blank" rel="noopener">N.EMBYVN</a></td><td class="num">45,9k</td><td class="num">4.9★</td><td class="num">~230k đồng giá</td><td>Giảm 10–70k, đơn 250k–1.000k, hết cuối tháng 11</td></tr>
+        <tr><td><a href="https://shopee.vn/shop/541631165" target="_blank" rel="noopener">CHIC PERFUME</a></td><td class="num">24k</td><td class="num">4.9★</td><td class="num">100–289k</td><td>Giảm 10k, đơn 259k, hết 23/12/2026</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 id="chi-tiet">4 · Top sản phẩm &amp; mã ưu đãi từng shop</h2>
+  <p style="color:var(--muted);font-size:14.5px">“Đã bán” = tổng lượt bán trên thẻ sản phẩm; “/tháng” = 30 ngày gần nhất. Giá ghi theo dạng: giá sau giảm (giá niêm yết, % giảm).</p>
+
+  <h3>4.1 The Authen Perfume <span class="shop-link">· <a href="https://shopee.vn/theauthenperfume" target="_blank" rel="noopener">shopee.vn/theauthenperfume</a> · 551 sản phẩm · 79,6k followers · 4.9★ (24,1k đánh giá) · Cần Thơ</span></h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sản phẩm bán chạy</th><th>Giá sau giảm (niêm yết)</th><th>Đã bán</th><th>/tháng</th></tr></thead>
+      <tbody>
+        <tr><td>Montblanc Signature EDP 10ml (nam)</td><td class="num">340k (440k, −23%)</td><td class="num">9k+</td><td class="num">410</td></tr>
+        <tr><td>Vial chiết 1.5ml ngẫu nhiên</td><td class="num">99k</td><td class="num">—</td><td class="num">351</td></tr>
+        <tr><td>JPG Le Male Le Parfum 10ml (nam)</td><td class="num">440k (500k, −12%)</td><td class="num">4k+</td><td class="num">259</td></tr>
+        <tr><td>Narciso Rodriguez Pure Musc 10ml (nữ)</td><td class="num">420k (500k, −16%)</td><td class="num">3k+</td><td class="num">237</td></tr>
+        <tr><td>Narciso Rodriguez Cristal 10ml (nữ)</td><td class="num">430k (500k, −14%)</td><td class="num">2k+</td><td class="num">231</td></tr>
+        <tr><td>Mini nam chính hãng</td><td class="num">340k</td><td class="num">1k+</td><td class="num">198</td></tr>
+        <tr><td>Tổng hợp Narciso Rodriguez 10ml</td><td class="num">400k (440k, −9%)</td><td class="num">1k+</td><td class="num">177</td></tr>
+        <tr><td>Versace Bright Crystal 10ml (nữ)</td><td class="num">380k (400k, −5%)</td><td class="num">1k+</td><td class="num">129</td></tr>
+        <tr><td>YSL Myslf EDP 10ml (nam)</td><td class="num">450k (550k, −18%)</td><td class="num">460</td><td class="num">129</td></tr>
+        <tr><td>Tổng hợp Diptyque 5–10ml</td><td class="num">560k (~644k, −13%)</td><td class="num">415</td><td class="num">128</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="voucher"><span>🎟️ Giảm 15k · đơn tối thiểu 599k · hết hạn 30/11/2026</span></div>
+
+  <h3>4.2 Blume — Tiệm Nước Hoa <span class="shop-link">· <a href="https://shopee.vn/shop/327667816" target="_blank" rel="noopener">shopee.vn/shop/327667816</a> · 245 sản phẩm · 36,7k followers · 5.0★ (1,5k đánh giá) · 6 năm · Cần Thơ</span></h3>
+  <p>Chuyên Armaf. Giá bán = giá niêm yết (không hiện % giảm).</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sản phẩm bán chạy</th><th>Giá</th><th>Đã bán</th><th>/tháng</th></tr></thead>
+      <tbody>
+        <tr><td>Club de Nuit Woman 10ml (nữ)</td><td class="num">240k</td><td class="num">450</td><td class="num">16</td></tr>
+        <tr><td>Club de Nuit Intense Man 10ml (nam)</td><td class="num">240k</td><td class="num">300</td><td class="num">6</td></tr>
+        <tr><td>Tổng hợp Odyssey EDP 10ml</td><td class="num">192k</td><td class="num">286</td><td class="num">58</td></tr>
+        <tr><td>Pour Homme 10ml (nam)</td><td class="num">345k</td><td class="num">149</td><td class="num">5</td></tr>
+        <tr><td>Odyssey EDP full 100ml</td><td class="num">1.299k</td><td class="num">91</td><td class="num">12</td></tr>
+        <tr><td>Versace Bright Crystal EDT 10ml (nữ)</td><td class="num">360k</td><td class="num">88</td><td class="num">3</td></tr>
+        <tr><td>Perle D'or EDP 10ml (unisex)</td><td class="num">252k</td><td class="num">60</td><td class="num">20</td></tr>
+        <tr><td>Afnan 9PM 10ml (nam)</td><td class="num">264k</td><td class="num">36</td><td class="num">6</td></tr>
+        <tr><td>Delilah Blanc 10ml (nữ)</td><td class="num">199k</td><td class="num">32</td><td class="num">—</td></tr>
+        <tr><td>Lattafa Her Confession EDP 10ml (nữ)</td><td class="num">276k</td><td class="num">27</td><td class="num">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="voucher">
+    <span>🎟️ Giảm 20k · đơn 499k</span><span>🎟️ Giảm 25k · đơn 599k</span><span>🎟️ Giảm 35k · đơn 899k</span><span>🎟️ Giảm 70k · đơn 1.999k</span>
+  </div>
+  <p style="color:var(--muted);font-size:14px">Cả 4 mã hiện “Hiệu lực sau: 1 ngày”, không thấy hạn dùng.</p>
+
+  <h3>4.3 T.H.E.S.C.E.N.T <span class="shop-link">· <a href="https://shopee.vn/shop/389308465" target="_blank" rel="noopener">shopee.vn/shop/389308465</a> · 164 sản phẩm · 59,7k followers · 4.9★ (20,1k đánh giá) · 6 năm · Phú Nhuận, TP.HCM</span></h3>
+  <div class="warn">⚠️ Giá chiết thấp hẳn so với The Authen cho cùng nhà (Diptyque Doson 10ml 280k vs Authen 420–560k; Tamdao 10ml 155k). Shop lớn, lâu năm nên vẫn đưa vào, nhưng chênh lệch giá được ghi rõ, không coi là bằng chứng gì.</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sản phẩm bán chạy</th><th>Giá sau giảm (niêm yết)</th><th>Đã bán</th><th>/tháng</th></tr></thead>
+      <tbody>
+        <tr><td>Diptyque Doson EDP 5/10ml</td><td class="num">155–280k (160–320k, −3%)</td><td class="num">1k+</td><td class="num">23</td></tr>
+        <tr><td>Diptyque Tamdao EDP 10ml</td><td class="num">155k (160k, −3%)</td><td class="num">1k+</td><td class="num">22</td></tr>
+        <tr><td>Byredo Blanche 5–10ml</td><td class="num">160k (200k, −20%)</td><td class="num">—</td><td class="num">21</td></tr>
+        <tr><td>Byredo Rose Of No Man's Land 10ml</td><td class="num">165k (180k, −8%)</td><td class="num">—</td><td class="num">20</td></tr>
+        <tr><td>Byredo La Tulipe</td><td class="num">165k (220k, −25%)</td><td class="num">—</td><td class="num">14</td></tr>
+        <tr><td>Jo Malone Peony &amp; Blush Suede 10ml</td><td class="num">160k (185k, −14%)</td><td class="num">528</td><td class="num">13</td></tr>
+        <tr><td>Diptyque Philosykos</td><td class="num">160k (299k, −46%)</td><td class="num">662</td><td class="num">13</td></tr>
+        <tr><td>Margiela Matcha Meditation 5/10ml</td><td class="num">90k (100k, −10%)</td><td class="num">—</td><td class="num">12</td></tr>
+        <tr><td>Margiela Memoire D'une Odeur 5/10ml</td><td class="num">126k (140k, −10%)</td><td class="num">—</td><td class="num">10</td></tr>
+        <tr><td>YSL Libre Intense 10ml</td><td class="num">145k (160k, −9%)</td><td class="num">—</td><td class="num">9</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="voucher"><span>🎟️ Không có mã giảm giá của shop</span><span>🛍️ Mua 2 giảm 2% · Mua 3 giảm 3%</span></div>
+
+  <h3>4.4 ARMAF Official Store (Shopee Mall) <span class="shop-link">· <a href="https://shopee.vn/shop/1007141364" target="_blank" rel="noopener">shopee.vn/shop/1007141364</a> · 81 sản phẩm · 282,1k followers · 4.9★ (24,6k đánh giá) · 3 năm · Nghệ An</span></h3>
+  <p>Chỉ bán Armaf: mini, full-size, body spray, sữa tắm.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sản phẩm bán chạy</th><th>Giá sau giảm (niêm yết)</th><th>Đã bán</th></tr></thead>
+      <tbody>
+        <tr><td>Xịt thơm body Armaf Odyssey 200ml</td><td class="num">211k (~281k, −25%)</td><td class="num">10k+</td></tr>
+        <tr><td>Club de Nuit Woman EDP 105ml</td><td class="num">1.040k (~1.405k, −26%)</td><td class="num">9k+</td></tr>
+        <tr><td>Club De Nuit mini 10ml</td><td class="num">198k (~300k, −34%)</td><td class="num">6k+ (234/tháng)</td></tr>
+        <tr><td>Club De Nuit Intense Man EDT 105ml</td><td class="num">1.246k (~1.597k, −22%)</td><td class="num">6k+</td></tr>
+        <tr><td>Club De Nuit full size 105ml</td><td class="num">1.040k (~1.195k, −13%)</td><td class="num">5k+</td></tr>
+        <tr><td>Body spray CDN Women 200ml</td><td class="num">216k (~280k, −23%)</td><td class="num">5k+</td></tr>
+        <tr><td>Body spray CDN 200ml</td><td class="num">216k (−23%)</td><td class="num">4k+</td></tr>
+        <tr><td>Combo 2 body spray Odyssey 200ml</td><td class="num">449k (~522k, −14%)</td><td class="num">2k+</td></tr>
+        <tr><td>Odyssey Limoni Fresh EDP 100ml</td><td class="num">920k (~1.333k, −31%)</td><td class="num">2k+</td></tr>
+        <tr><td>Sữa tắm CDN 360ml</td><td class="num">439k (~601k, −27%)</td><td class="num">2k+</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="voucher"><span>🎟️ Không thấy dải voucher trên trang shop — chỉ badge “VOUCHER 35K / 100K” trên ảnh sản phẩm</span><span>🎁 Mua để nhận quà (full-size)</span></div>
+
+  <h3>4.5 Men Perfume Luxury — N.EMBYVN (Shopee Mall) <span class="shop-link">· <a href="https://shopee.vn/m_perfume_luxury" target="_blank" rel="noopener">shopee.vn/m_perfume_luxury</a> · 56 sản phẩm · 45,9k followers · 4.9★ (30,7k đánh giá) · 34 tháng · Hà Nội</span></h3>
+  <div class="warn">⚠️ Giá chiết gần như đồng giá 230–248k/10ml cho mọi nhà (Le Male Le Parfum 10ml 234k vs Authen 440k). Mall + 30,7k đánh giá, nhưng không nên đua giá theo mức này.</div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sản phẩm bán chạy</th><th>Giá sau giảm (niêm yết)</th><th>Đã bán</th><th>/tháng</th></tr></thead>
+      <tbody>
+        <tr><td>Signature EDP (nữ)</td><td class="num">185k (250k, −26%)</td><td class="num">10k+</td><td class="num">1k+</td></tr>
+        <tr><td>Delina Exclusif EDP 10ml (nữ)</td><td class="num">215k (300k, −28%)</td><td class="num">10k+</td><td class="num">692</td></tr>
+        <tr><td>Musk Kashmir EDP 10ml (unisex)</td><td class="num">233k (~251k, −7%)</td><td class="num">7k+</td><td class="num">—</td></tr>
+        <tr><td>Black Opium 10ml (nữ)</td><td class="num">230k (~250k, −8%)</td><td class="num">6k+</td><td class="num">475</td></tr>
+        <tr><td>Baccarat Rouge 540 Extrait 10ml (unisex)</td><td class="num">230k (~299k, −23%)</td><td class="num">5k+</td><td class="num">390</td></tr>
+        <tr><td>Le Male Le Parfum EDP 10ml (nam)</td><td class="num">234k (267k, −12%)</td><td class="num">5k+</td><td class="num">458</td></tr>
+        <tr><td>English Pear &amp; Freesia 10ml (nữ)</td><td class="num">236,7k (~260k, −9%)</td><td class="num">5k+</td><td class="num">—</td></tr>
+        <tr><td>Bloom EDP 10ml (nữ)</td><td class="num">239,8k (~250k, −4%)</td><td class="num">5k+</td><td class="num">—</td></tr>
+        <tr><td>Jazz Club EDT 10ml (nam)</td><td class="num">234,4k (~250k, −6%)</td><td class="num">4k+</td><td class="num">—</td></tr>
+        <tr><td>Club de Nuit Woman EDP 10ml (nữ)</td><td class="num">124k (~161k, −23%)</td><td class="num">4k+</td><td class="num">401</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="voucher">
+    <span>🎟️ Giảm 10k · đơn 250k · hết 28/11/2026</span><span>🎟️ Giảm 15k · đơn 350k · hết 26/11 (63% đã dùng)</span><span>🎟️ Giảm 30k · đơn 450k · hết 24/11 (63% đã dùng)</span><span>🎟️ Giảm 45k · đơn 600k · hết 25/11 (52% đã dùng)</span><span>🎟️ Giảm 60k · đơn 800k · hết 26/11</span><span>🎟️ Giảm 70k · đơn 1.000k · hết 26/11</span>
+  </div>
+
+  <h3>4.6 CHIC PERFUME ® (Shopee Mall) <span class="shop-link">· <a href="https://shopee.vn/shop/541631165" target="_blank" rel="noopener">shopee.vn/shop/541631165</a> · 57 sản phẩm · 24k followers · 4.9★ (17,2k đánh giá) · 5 năm · TP.HCM</span></h3>
+  <p>Chiết đóng chai riêng của shop (10ml). Lưu ý: shopee.vn/chicperfume là shop khác đã bị khóa, không phải shop này.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Sản phẩm bán chạy</th><th>Giá sau giảm (niêm yết)</th><th>Đã bán</th><th>/tháng</th></tr></thead>
+      <tbody>
+        <tr><td>Le Male Le Parfum (nam)</td><td class="num">203k (~221k, −8%)</td><td class="num">5k+</td><td class="num">255</td></tr>
+        <tr><td>Nar Trắng, Hồng (nữ)</td><td class="num">199k (260k, −23%)</td><td class="num">5k+</td><td class="num">328</td></tr>
+        <tr><td>Nước hoa -018</td><td class="num">100k</td><td class="num">5k+</td><td class="num">—</td></tr>
+        <tr><td>White Tea EDT (nữ)</td><td class="num">139k (~170k, −18%)</td><td class="num">4k+</td><td class="num">253</td></tr>
+        <tr><td>Sample ngẫu nhiên -019</td><td class="num">100k</td><td class="num">4k+</td><td class="num">1k+</td></tr>
+        <tr><td>Eros Xanh (nam)</td><td class="num">226k (~318k, −29%)</td><td class="num">4k+</td><td class="num">174</td></tr>
+        <tr><td>Delina Exclusif Hồng (nữ)</td><td class="num">272k (~349k, −22%)</td><td class="num">4k+</td><td class="num">92</td></tr>
+        <tr><td>Club Nuit Men EDT (nam)</td><td class="num">185,2k (~221k, −16%)</td><td class="num">3k+</td><td class="num">139</td></tr>
+        <tr><td>Mon Trắng (nữ)</td><td class="num">203k (~221k, −8%)</td><td class="num">3k+</td><td class="num">153</td></tr>
+        <tr><td>Libre Vàng EDP (nữ)</td><td class="num">289k (400k, −28%)</td><td class="num">2k+</td><td class="num">292</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="voucher"><span>🎟️ Giảm 10k · đơn tối thiểu 259k · hết hạn 23/12/2026</span></div>
+
+  <h2 id="loai">5 · Shop bị loại khỏi so sánh</h2>
+  <ul>
+    <li><strong>Niixt Parfums</strong> — chỉ 2,6k followers, 1,1k đánh giá, sản phẩm bán chạy nhất 316 lượt bán: quá nhỏ, không tính là bán chạy.</li>
+    <li><strong>Hidden gem perfume</strong> — không tìm thấy trên Shopee (kết quả chỉ ra Mirelle Perfume 59 followers và An.Gem trang sức).</li>
+    <li><strong>Mirelle Perfume</strong> — 59 followers, mỗi sản phẩm bán 1–4 lượt.</li>
+    <li><strong>ESTARA</strong> — Delina Exclusif 10ml 121k (−45%), thấp hẳn so với mặt bằng giá.</li>
+    <li><strong>Genius Perfume</strong> — Delina Exclusif / Flora Gorgeous Jasmine 10ml 159k (−43%), thấp hẳn so với mặt bằng giá.</li>
+    <li><strong>Shop bán “BST Nước Hoa Chiết Diptyque Collection”</strong> (259k, 221/tháng) — rating shop 4.6, dưới ngưỡng ~4.8.</li>
+    <li><strong>NHÀ CỦA THỜI THANH XUÂN</strong> — 4.9★, 17,4k followers nhưng là shop thương hiệu riêng (chai 30ml 800k), không phải shop chiết designer.</li>
+    <li><strong>Các hãng mass-market</strong> (Romano, XMen, Scenti, Charme…) — không phải shop chiết designer.</li>
+  </ul>
+
+  <h2 id="doi-chieu">6 · Đối chiếu với kho Rosemary</h2>
+  <p>Rosemary hiện có (theo audit 13/11): DIP/Diptyque (9 mùi, 31,8% doanh thu), Odyssey (14 mùi), Hawas (5 mùi), Bloom/Gucci Flora, Delilah Blanc, Le Sel d'Issey; AOV 387k; 5.0★; 653 followers.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Điểm so sánh</th><th>Rosemary</th><th>Đối thủ</th></tr></thead>
+      <tbody>
+        <tr><td>Giá chiết 10ml</td><td>Hawas 140–440k; Bloom 135k; Delilah Blanc 120k; DIP từ ~345k</td><td>Premium 192–560k; nhóm số lượng ~230k; T.H.E.S.C.E.N.T 145–165k</td></tr>
+        <tr><td>Diptyque</td><td>Mùi mạnh nhất (31,8% doanh thu)</td><td>Authen bán 420–560k/10ml (128/tháng); T.H.E.S.C.E.N.T bán 155–280k</td></tr>
+        <tr><td>Odyssey / Armaf</td><td>27 đơn/tháng</td><td>Blume 192k/10ml (58/tháng); ARMAF mini CDN 198k (234/tháng)</td></tr>
+        <tr><td>Delilah Blanc</td><td>120k, 6 đơn/tháng</td><td>Blume 199k (32 lượt bán) — Rosemary rẻ hơn</td></tr>
+        <tr><td>Followers</td><td>653</td><td>24k–282k — khoảng cách lớn nhất, discovery là nút thắt</td></tr>
+        <tr><td>Voucher</td><td>ROSE200–500: 2–5%, tối đa 5–20k, đơn 200–500k, đến 31/12/2026</td><td>Authen 15k (đơn 599k); Blume 20–70k (đơn 499k–1.999k); N.EMBYVN 10–70k (đơn 250k–1.000k); CHIC 10k (đơn 259k)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p><strong>Nhận xét voucher:</strong> mức vào của Rosemary (đơn 200k) thấp hơn hầu hết đối thủ (250–599k), hợp với AOV 387k; nhưng mức giảm tối đa 5–20k nhỏ hơn đối thủ (15–70k). Khi AOV tăng, cân nhắc thêm tầng cao hơn.</p>
+
+  <h2 id="shortlist">7 · Shortlist mùi nên bổ sung</h2>
+  <p>Giá gợi ý theo mặt bằng nhóm premium, chưa trừ chiết khấu nhập — <strong>phải kiểm tra giá nhập trước khi nhập để giữ COGS ≤ 30%</strong>.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>#</th><th>Mùi (10ml)</th><th>Bằng chứng nhu cầu</th><th>Giá gợi ý</th><th>Ưu tiên</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Armaf Club de Nuit Intense Man</td><td>Blume 240k; ARMAF mini 198k (234/tháng); N.EMBYVN 401/tháng</td><td class="num">250k</td><td><span class="pill high">Cao</span></td></tr>
+        <tr><td>2</td><td>Armaf Club de Nuit Woman</td><td>Blume 240k (450 lượt bán); N.EMBYVN 401/tháng</td><td class="num">250k</td><td><span class="pill high">Cao</span></td></tr>
+        <tr><td>3</td><td>Narciso Rodriguez Pure Musc (nữ)</td><td>Authen 420k, 237/tháng</td><td class="num">420k</td><td><span class="pill high">Cao</span></td></tr>
+        <tr><td>4</td><td>Montblanc Signature (nam)</td><td>Authen 340k, 410/tháng — bán chạy nhất của Authen</td><td class="num">340k</td><td><span class="pill high">Cao</span></td></tr>
+        <tr><td>5</td><td>Vial / sample ngẫu nhiên 1,5–2ml</td><td>Authen 99k, 351/tháng; CHIC 100k, 1k+/tháng</td><td class="num">99k</td><td><span class="pill bait">Cao · mồi</span></td></tr>
+        <tr><td>6</td><td>JPG Le Male Le Parfum (nam)</td><td>Authen 440k, 259/tháng</td><td class="num">440k</td><td><span class="pill med">Trung–cao</span></td></tr>
+        <tr><td>7</td><td>Delina Exclusif (nữ)</td><td>N.EMBYVN 215k, 692/tháng; CHIC 272k</td><td class="num">280k</td><td><span class="pill med">Trung–cao</span></td></tr>
+        <tr><td>8</td><td>Afnan 9PM (nam)</td><td>Blume 264k; cùng hệ Armaf với Odyssey</td><td class="num">260k</td><td><span class="pill med">Trung</span></td></tr>
+        <tr><td>9</td><td>Versace Bright Crystal (nữ)</td><td>Authen 380k, 129/tháng; Blume 360k</td><td class="num">360k</td><td><span class="pill med">Trung</span></td></tr>
+        <tr><td>10</td><td>Margiela Replica Jazz Club (nam/unisex)</td><td>N.EMBYVN 234k, 4k+ lượt bán; hợp quiet luxury + dân văn phòng</td><td class="num">280k</td><td><span class="pill med">Trung</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Chưa nên vội</h3>
+  <ul>
+    <li><strong>Byredo (Blanche, Rose Of No Man's Land):</strong> có nhu cầu (14–21/tháng) nhưng giá neo bị méo (160k ở T.H.E.S.C.E.N.T vs giá thị trường thực ~350k+/10ml). Chỉ nhập khi xác minh được nguồn chính hãng và giá nhập giữ được COGS ≤ 30% ở giá bán ~350k.</li>
+    <li><strong>Baccarat Rouge 540:</strong> nhu cầu rất lớn (390/tháng) nhưng giá 230k/10ml ở nhóm số lượng lớn thấp bất thường so với giá gốc; chưa nên nhập theo mặt bằng đó.</li>
+    <li><strong>Narciso Cristal:</strong> nhu cầu tốt (231/tháng, 430k) nhưng trùng phân khúc với Pure Musc — nhập Pure Musc trước, Cristal sau nếu Pure Musc chạy.</li>
+  </ul>
+
+  <h2 id="han-che">8 · Hạn chế của dữ liệu</h2>
+  <ul>
+    <li>Shopee chặn điều hướng 2 lần bằng trang xác minh lưu lượng; đã xử lý bằng cách về trang chủ, không mua / follow / nhắn gì.</li>
+    <li>Link voucher trực tiếp của shop trả về trang trắng / 404 nên voucher lấy theo dải hiển thị trên trang shop; Blume không hiện hạn dùng; ARMAF không hiện dải voucher (chỉ badge trên ảnh).</li>
+    <li>Trang Niixt tải không xong trong lần thăm đó; số liệu lấy từ tiêu đề shop và tìm kiếm tên.</li>
+    <li>Giá Odyssey 10ml của Rosemary chưa đối chiếu trực tiếp trong đợt này (Blume bán 192k/10ml) — cần kiểm tra lại giá niêm yết của Rosemary.</li>
+  </ul>
+
+  <footer>
+    Rosemary — Tiệm thơm Rosemary · Mùi hương cho từng khoảnh khắc · Phân tích ngày 13/11/2026 · Giá ghi nhận tại thời điểm kiểm tra, có thể thay đổi theo chương trình khuyến mãi của từng shop.
+  </footer>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('themeToggle');
+  var root = document.documentElement;
+  function apply(theme){
+    root.setAttribute('data-theme', theme);
+    btn.textContent = theme === 'dark' ? '☀️ Light mode' : '🌙 Dark mode';
+    try{ localStorage.setItem('rosemary-theme', theme); }catch(e){}
+  }
+  var saved = null;
+  try{ saved = localStorage.getItem('rosemary-theme'); }catch(e){}
+  var initial = saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  apply(initial);
+  btn.addEventListener('click', function(){
+    apply(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>
