@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="vi" data-theme="light" data-theme-mode="auto">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" id="metaColorScheme" />
+<script>
+(function(){try{var dark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.setAttribute("data-theme",dark?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();
+</script>
+<link rel="icon" href="data:," />
+<title>20261113 Weekly rosemary report shopee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#F5F1EA; --bg2:#EFE9DE; --surface:#FFFFFF; --surface2:#FBF8F2;
+  --ink:#2B2B2B; --ink2:#4A4A44; --muted:#7A766C; --line:#E2DACA; --line2:#D5CBB6;
+  --green:#3F5A4A; --green2:#5E7563; --green-soft:#E4EBE2;
+  --orange:#EE4D2D; --orange-dark:#C93A1F; --orange-soft:#FDECE8;
+  --red:#C0392B; --red-soft:#FBEAE8;
+  --amber:#9A6B12; --amber-soft:#FBF0D3;
+  --gold:#E9C96B;
+  --shadow:0 1px 3px rgba(43,43,43,.07),0 8px 24px rgba(43,43,43,.05);
+  --radius:14px;
+}
+:root[data-theme="dark"]{
+    --bg:#1C1E1B; --bg2:#232622; --surface:#292C28; --surface2:#2F332E;
+    --ink:#F0EDE4; --ink2:#D8D3C6; --muted:#A39E90; --line:#3D403A; --line2:#4A4E46;
+    --green:#9DBFA9; --green2:#7FA38C; --green-soft:#2E3B32;
+    --orange:#FF7A59; --orange-dark:#FF9A85; --orange-soft:#40251F;
+    --red:#F08A7D; --red-soft:#422A26;
+    --amber:#E5C877; --amber-soft:#3D3623;
+    --shadow:0 1px 3px rgba(0,0,0,.35),0 8px 24px rgba(0,0,0,.25);
+}
+:root[data-theme="light"]{
+    --bg:#F5F1EA; --bg2:#EFE9DE; --surface:#FFFFFF; --surface2:#FBF8F2;
+    --ink:#2B2B2B; --ink2:#4A4A44; --muted:#7A766C; --line:#E2DACA; --line2:#D5CBB6;
+    --green:#3F5A4A; --green2:#5E7563; --green-soft:#E4EBE2;
+    --orange:#EE4D2D; --orange-dark:#C93A1F; --orange-soft:#FDECE8;
+    --red:#C0392B; --red-soft:#FBEAE8;
+    --amber:#9A6B12; --amber-soft:#FBF0D3;
+    --shadow:0 1px 3px rgba(43,43,43,.07),0 8px 24px rgba(43,43,43,.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Be Vietnam Pro",system-ui,sans-serif;font-size:15px;line-height:1.55}
+h1,h2,h3{font-family:"Lora",serif;line-height:1.25;margin:0}
+a{color:var(--green);font-weight:600}
+button,select,input{font-family:inherit;min-height:40px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 64px}
+
+/* ---------- Header ---------- */
+header{padding:28px 0 8px}
+.eyeline{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.02em}
+.pill{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:var(--ink2)}
+.pill .dot{width:8px;height:8px;border-radius:50%;background:var(--green2)}
+h1{font-size:clamp(26px,4.5vw,38px);font-weight:700;margin:12px 0 6px}
+.sub{color:var(--ink2);max-width:760px;margin:0}
+.verdict{margin-top:18px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--green);border-radius:var(--radius);padding:16px 18px;box-shadow:var(--shadow)}
+.verdict strong{color:var(--green)}
+.verdict p{margin:0}
+.verdict .verdict-list{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+.verdict .verdict-list li{display:flex;gap:10px;align-items:flex-start;line-height:1.55}
+.verdict .verdict-num{flex:none;width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;font-size:12.5px;font-weight:800;display:flex;align-items:center;justify-content:center;margin-top:1px}
+:root[data-theme="dark"] .verdict .verdict-num{color:#16211A}
+.verdict .verdict-note{margin-top:10px}
+.verdict .verdict-priority{margin-top:8px}
+
+/* ---------- Theme switch ---------- */
+.themebar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.themebar .theme-label{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.themebar .theme-hint{font-size:12.5px;color:var(--muted)}
+
+/* ---------- Alert ---------- */
+.alert{margin-top:14px;background:var(--red-soft);border:1px solid var(--red);border-radius:var(--radius);padding:14px 18px;display:flex;gap:14px;align-items:flex-start}
+.alert .tag{flex:none;background:var(--red);color:#fff;font-weight:800;font-size:11.5px;letter-spacing:.06em;padding:4px 9px;border-radius:6px;margin-top:2px}
+.alert p{margin:0}
+.alert b{color:var(--red)}
+
+/* ---------- Filter bar ---------- */
+.filterbar{position:sticky;top:0;z-index:40;background:var(--bg);padding:14px 0 10px;margin-top:18px;border-bottom:1px solid var(--line)}
+.filterbar .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.fgroup{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.fgroup .flabel{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;margin-right:2px}
+.chip{border:1px solid var(--line2);background:var(--surface);color:var(--ink2);border-radius:999px;padding:7px 13px;font-size:13px;font-weight:600;cursor:pointer;min-height:36px}
+.chip:hover{border-color:var(--green2)}
+.chip.on{background:var(--green);border-color:var(--green);color:#fff}
+:root[data-theme="dark"] .chip.on{color:#16211A}
+.chip.orange.on{background:var(--orange);border-color:var(--orange);color:#fff}
+.searchbox{flex:1 1 200px;display:flex}
+.searchbox input{width:100%;border:1px solid var(--line2);background:var(--surface);color:var(--ink);border-radius:10px;padding:9px 12px;font-size:14px}
+.fcount{font-size:12.5px;color:var(--muted);margin-top:8px}
+.fcount b{color:var(--ink)}
+
+/* ---------- Sections ---------- */
+section{margin-top:34px}
+.sec-head{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline;justify-content:space-between;margin-bottom:6px}
+h2{font-size:clamp(20px,3vw,26px)}
+.sec-note{color:var(--muted);font-size:13.5px;margin:0 0 14px;max-width:820px}
+
+/* ---------- KPI cards ---------- */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 15px;box-shadow:var(--shadow)}
+.kpi .k{font-size:12px;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.kpi .v{font-size:24px;font-weight:800;margin:3px 0 1px;font-variant-numeric:tabular-nums}
+.kpi .d{font-size:12.5px;font-weight:600}
+.down{color:var(--red)} .up{color:var(--green)} .flat{color:var(--muted)}
+.kpi.warn{border-color:var(--red);background:var(--red-soft)}
+.kpi.warn .v{color:var(--red)}
+
+/* ---------- Panels & bars ---------- */
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.panel h3{font-size:17px;margin-bottom:10px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.bar-row{display:grid;grid-template-columns:118px 1fr 86px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px dashed var(--line)}
+.bar-row:last-child{border-bottom:0}
+.bar-row .bl{font-weight:600;font-size:13.5px}
+.bar-row .bv{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;font-size:13.5px}
+.bar-track{height:14px;background:var(--bg2);border-radius:7px;overflow:hidden}
+.bar-fill{height:100%;border-radius:7px;background:var(--green2);transition:width .4s}
+.bar-fill.orange{background:var(--orange)} .bar-fill.red{background:var(--red)} .bar-fill.gold{background:#C9A227} .bar-fill.lav{background:#ABA3C2}
+.bar-sub{font-size:12px;color:var(--muted)}
+.toggle{display:inline-flex;border:1px solid var(--line2);border-radius:10px;overflow:hidden}
+.toggle button{border:0;background:var(--surface);color:var(--ink2);padding:8px 14px;font-size:13px;font-weight:600;cursor:pointer;min-height:38px}
+.toggle button.on{background:var(--green);color:#fff}
+:root[data-theme="dark"] .toggle button.on{color:#16211A}
+
+/* Funnel */
+.funnel{display:flex;flex-direction:column;gap:8px}
+.fstep{display:flex;align-items:center;gap:12px}
+.fstep .fbar{height:44px;border-radius:9px;background:var(--green2);color:#fff;display:flex;align-items:center;padding:0 14px;font-weight:700;min-width:118px;font-size:14px}
+.fstep:nth-child(1) .fbar{background:#33503F}.fstep:nth-child(2) .fbar{background:#476B54}.fstep:nth-child(3) .fbar{background:#5E7A67}.fstep:nth-child(4) .fbar{background:#7A9182}.fstep:nth-child(5) .fbar{background:var(--red)}
+.fstep .fmeta{font-size:13px;color:var(--ink2)}
+.fstep .fmeta b{color:var(--ink)}
+
+/* ---------- Diagnosis cards ---------- */
+.diag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
+.diag{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px}
+.diag .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.sev{font-size:11px;font-weight:800;letter-spacing:.05em;padding:3px 8px;border-radius:6px;text-transform:uppercase}
+.sev.crit{background:var(--red);color:#fff}
+.sev.high{background:var(--orange-soft);color:var(--orange-dark);border:1px solid var(--orange)}
+.sev.med{background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber)}
+.lens-tag{font-size:11.5px;font-weight:700;color:var(--green);background:var(--green-soft);padding:3px 8px;border-radius:6px}
+.diag h3{font-size:16.5px;font-family:"Be Vietnam Pro",sans-serif;font-weight:700}
+.diag p{margin:0;color:var(--ink2);font-size:13.8px}
+.diag .fix{margin-top:auto;padding-top:8px;border-top:1px dashed var(--line);font-size:13.5px}
+.diag .fix b{color:var(--green)}
+
+/* ---------- Tables ---------- */
+.tablebox{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th{text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);padding:11px 14px;border-bottom:2px solid var(--line);background:var(--surface2)}
+td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:0}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.sortable{cursor:pointer;user-select:none}
+.sortable:hover{color:var(--ink)}
+.mini{font-size:12.5px;color:var(--muted)}
+.tag-soft{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--green-soft);color:var(--green)}
+.tag-bad{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--red-soft);color:var(--red)}
+.tag-warn{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--amber-soft);color:var(--amber)}
+@media(max-width:700px){
+  table.resp thead{display:none}
+  table.resp tr{display:block;border-bottom:2px solid var(--line);padding:6px 0}
+  table.resp td{display:flex;justify-content:space-between;gap:14px;border-bottom:0;padding:6px 14px;text-align:right}
+  table.resp td::before{content:attr(data-l);font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;text-align:left}
+  table.resp td:first-child{font-weight:700;text-align:right}
+}
+
+/* ---------- Budget sim ---------- */
+.budget-head{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between}
+.budget-total{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%;accent-color:var(--orange);min-height:36px}
+.splitbar{display:flex;height:30px;border-radius:8px;overflow:hidden;margin:12px 0 4px}
+.splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;padding:0 4px}
+@media(max-width:480px){.splitbar div{font-size:10.5px}}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;color:var(--ink2);margin-bottom:8px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block;margin-right:5px;vertical-align:-1px}
+
+/* ---------- Actions ---------- */
+.act-list{display:flex;flex-direction:column;gap:9px}
+.act{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px;display:grid;grid-template-columns:34px 1fr auto;gap:12px;align-items:start;box-shadow:var(--shadow)}
+.act .n{width:30px;height:30px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:13.5px}
+:root[data-theme="dark"] .act .n{color:#16211A}
+.act .t{font-weight:600}
+.act .imp{font-size:12px;font-weight:700;white-space:nowrap;padding:4px 9px;border-radius:999px;background:var(--green-soft);color:var(--green)}
+.act .imp.top{background:var(--orange);color:#fff}
+.horizon-title{font-size:13px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin:20px 0 9px}
+.empty{display:none;background:var(--surface2);border:1px dashed var(--line2);border-radius:12px;padding:18px;text-align:center;color:var(--muted)}
+
+/* ---------- KPI targets ---------- */
+.prog{height:10px;background:var(--bg2);border-radius:5px;overflow:hidden;min-width:110px}
+.prog i{display:block;height:100%;background:var(--green2)}
+.prog i.red{background:var(--red)} .prog i.amber{background:#C9A227}
+
+/* ---------- Footer ---------- */
+footer{margin-top:40px;border-top:1px solid var(--line);padding-top:16px;color:var(--muted);font-size:13px}
+footer li{margin-bottom:4px}
+.hidden{display:none!important}
+:focus-visible{outline:2px solid var(--orange);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyeline">
+    <span class="pill"><span class="dot"></span>Tiệm thơm Rosemary · <a href="https://shopee.vn/rosemary.perfume" target="_blank" rel="noopener">shopee.vn/rosemary.perfume</a></span>
+    <span class="pill">Kỳ: 14/10 – 12/11/2026 (30 ngày)</span>
+    <span class="pill">Nguồn: Seller Centre + trang công khai + 5 đối thủ</span>
+    <span class="pill">Rà soát ngày 13/11/2026</span>
+  </div>
+  <h1>Báo cáo hiệu quả Shopee — Rosemary</h1>
+  <p class="sub">Shop nền khỏe (5.0 sao, badge Yêu Thích, chat trả lời 100%) nhưng doanh thu đang rò ở 3 chỗ. Dùng bộ lọc bên dưới để xem theo từng góc nhìn: doanh thu, traffic, chuyển đổi, giữ chân, vận hành.</p>
+  <div class="themebar" aria-label="Chế độ hiển thị">
+    <span class="theme-label">Giao diện</span>
+    <div class="toggle" role="group" aria-label="Chọn chế độ sáng, tối hoặc tự động">
+      <button type="button" data-theme-btn="light">Sáng</button>
+      <button type="button" data-theme-btn="dark">Tối</button>
+      <button type="button" data-theme-btn="auto" class="on">Tự động</button>
+    </div>
+    <span class="theme-hint" id="themeHint">Đang theo hệ thống</span>
+  </div>
+  <div class="verdict">
+    <p><strong>Kết luận:</strong></p>
+    <ol class="verdict-list">
+      <li><span class="verdict-num" aria-hidden="true">1</span><span>Quảng cáo đã tắt hẳn do hết số dư — kênh mang về ~2/3 doanh thu.</span></li>
+      <li><span class="verdict-num" aria-hidden="true">2</span><span>Chuyển đổi giảm trong khi traffic gần như không đổi — khách vào xem nhưng không mua.</span></li>
+      <li><span class="verdict-num" aria-hidden="true">3</span><span>Gần như không giữ được khách cũ và không dùng công cụ kéo đơn nào (Live, Flash Sale, khuyến mãi đều bằng 0).</span></li>
+    </ol>
+    <p class="verdict-note">Giá không phải vấn đề — Rosemary đang rẻ hơn hoặc ngang đối thủ ở các mã chủ lực.</p>
+    <p class="verdict-priority"><strong>Ưu tiên số 1: nạp lại quảng cáo ngay hôm nay.</strong></p>
+  </div>
+  <div class="alert" role="alert">
+    <span class="tag">KHẨN CẤP</span>
+    <p>Số dư quảng cáo (DVHT) = <b>0đ</b> — toàn bộ <b>20 chiến dịch GMV Max đã dừng</b>. Tháng qua quảng cáo mang về 46,2tr với chi phí 3,38tr (ROAS 13,67). Ngày 13/11 tính tới lúc rà soát: doanh thu 0đ, 34 lượt thăm. Mỗi ngày chậm nạp là một ngày mất ~2/3 doanh thu. Đề xuất nạp: <b>5.000.000đ</b> — xem mô phỏng phân bổ ở mục Quảng cáo.</p>
+  </div>
+</header>
+
+<!-- ============ FILTER BAR ============ -->
+<div class="filterbar" id="filterbar">
+  <div class="row">
+    <div class="fgroup" role="group" aria-label="Lọc theo góc nhìn">
+      <span class="flabel">Góc nhìn</span>
+      <button class="chip on" data-lens="all">Tất cả</button>
+      <button class="chip" data-lens="revenue">Doanh thu</button>
+      <button class="chip" data-lens="traffic">Traffic</button>
+      <button class="chip" data-lens="conversion">Chuyển đổi</button>
+      <button class="chip" data-lens="retention">Giữ chân</button>
+      <button class="chip" data-lens="ops">Vận hành</button>
+    </div>
+    <div class="searchbox">
+      <input type="search" id="q" placeholder="Tìm sản phẩm, việc cần làm, vấn đề…" aria-label="Tìm kiếm trong báo cáo" />
+    </div>
+  </div>
+  <div class="row" style="margin-top:8px">
+    <div class="fgroup" role="group" aria-label="Lọc mức độ vấn đề">
+      <span class="flabel">Mức độ</span>
+      <button class="chip orange on" data-sev="all">Tất cả</button>
+      <button class="chip orange" data-sev="crit">Khẩn cấp</button>
+      <button class="chip orange" data-sev="high">Cao</button>
+      <button class="chip orange" data-sev="med">Trung bình</button>
+    </div>
+    <div class="fgroup" role="group" aria-label="Lọc thời hạn hành động">
+      <span class="flabel">Hành động</span>
+      <button class="chip on" data-horizon="all">Mọi thời hạn</button>
+      <button class="chip" data-horizon="week">Tuần này</button>
+      <button class="chip" data-horizon="month">2–4 tuần</button>
+      <button class="chip" data-horizon="long">Dài hạn</button>
+    </div>
+  </div>
+  <p class="fcount" id="fcount"></p>
+</div>
+
+<!-- ============ KPI ============ -->
+<section id="kpi" aria-label="Chỉ số chính">
+  <div class="sec-head"><h2>Chỉ số chính — 30 ngày</h2></div>
+  <p class="sec-note">Chuẩn chính: đơn đã thanh toán. Shopee còn tính theo đơn đã xác nhận (60,2tr, +2,4%) — chênh nhau do đơn hủy và đơn chưa hoàn tất.</p>
+  <div class="kpis">
+    <div class="kpi"><div class="k">Doanh thu (đã TT)</div><div class="v">57,3tr</div><div class="d down">▼ 3,4% so kỳ trước</div></div>
+    <div class="kpi"><div class="k">Đơn hàng</div><div class="v">148</div><div class="d down">▼ 17,3% — giảm mạnh nhất</div></div>
+    <div class="kpi"><div class="k">Giá trị đơn TB</div><div class="v">387k</div><div class="d down">▼ 16,9%</div></div>
+    <div class="kpi"><div class="k">Tỉ lệ chuyển đổi</div><div class="v">1,33%</div><div class="d down">▼ 0,28 điểm</div></div>
+    <div class="kpi"><div class="k">Lượt thăm</div><div class="v">5.636</div><div class="d flat">▼ 1,5% — gần như không đổi</div></div>
+    <div class="kpi"><div class="k">Lượt click</div><div class="v">11.152</div><div class="d flat">▼ 0,2%</div></div>
+    <div class="kpi"><div class="k">Doanh thu quảng cáo</div><div class="v">46,2tr</div><div class="d up">ROAS 13,67 · chi 3,38tr</div></div>
+    <div class="kpi"><div class="k">Khách mới / cũ</div><div class="v">83% / 17%</div><div class="d down">Mua lại chỉ 4,95%</div></div>
+    <div class="kpi"><div class="k">Đánh giá mới</div><div class="v">35</div><div class="d down">Tỉ lệ đánh giá 18% · 183 chưa trả lời</div></div>
+    <div class="kpi warn"><div class="k">Số dư quảng cáo</div><div class="v">0đ</div><div class="d">20/20 chiến dịch đã dừng</div></div>
+  </div>
+  <p class="sec-note" style="margin-top:12px">Đọc nhanh: <b>traffic không giảm nhưng đơn giảm 17,3%</b> → vấn đề nằm ở chuyển đổi và hủy đơn, không phải ở lượng khách. GMV hiện tại ≈ <b>1,9tr/ngày</b>, mục tiêu Q4 là 3tr/ngày.</p>
+</section>
+
+<!-- ============ FUNNEL & TRAFFIC ============ -->
+<section id="funnel" aria-label="Phễu bán hàng và nguồn traffic">
+  <div class="sec-head"><h2>Phễu bán hàng &amp; nguồn traffic</h2></div>
+  <p class="sec-note">Phễu rò ở 2 đoạn: khách thêm giỏ nhiều nhưng đặt hàng ít, và ~20% đơn đặt bị hủy (≈8tr doanh thu mất giữa lúc đặt và lúc xác nhận).</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Phễu: xem → giỏ → đặt → thanh toán</h3>
+      <div class="funnel">
+        <div class="fstep"><div class="fbar" style="width:100%">18.291 lượt xem trang</div><div class="fmeta">5.636 lượt thăm · 11.152 click</div></div>
+        <div class="fstep"><div class="fbar" style="width:72%">702 khách thêm vào giỏ</div><div class="fmeta"><b>15,52%</b> khách xem thêm giỏ</div></div>
+        <div class="fstep"><div class="fbar" style="width:46%">154 khách đặt hàng</div><div class="fmeta">221 sản phẩm · chỉ <b>22%</b> khách thêm giỏ đi tới đặt hàng</div></div>
+        <div class="fstep"><div class="fbar" style="width:40%">148 đơn đã thanh toán</div><div class="fmeta">Doanh thu <b>57,3tr</b> · chuyển đổi chung 1,33%</div></div>
+        <div class="fstep"><div class="fbar" style="width:26%">35 đơn hủy</div><div class="fmeta"><b>~20%</b> trong 177 đơn đặt — cần xem lý do hủy trong Seller Centre</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <h3 style="margin:0">Nguồn doanh thu</h3>
+        <div class="toggle" role="group" aria-label="Đổi chỉ số nguồn traffic">
+          <button class="on" data-metric="rev">% Doanh thu</button>
+          <button data-metric="conv">% Chuyển đổi</button>
+        </div>
+      </div>
+      <div id="trafficBars" style="margin-top:8px"></div>
+      <p class="mini" id="trafficNote">Tìm kiếm là nguồn chính và chuyển đổi tốt nhất. Đề xuất có traffic nhưng chuyển đổi yếu nhất (0,59%) — đây là đoạn cần sửa nội dung trang sản phẩm.</p>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="panel">
+      <h3>Doanh thu theo giá trị đơn</h3>
+      <div class="bar-row"><span class="bl">Dưới 161k</span><div class="bar-track"><div class="bar-fill gold" style="width:16%"></div></div><span class="bv">3,86tr</span></div>
+      <div class="bar-row"><span class="bl">161–313k</span><div class="bar-track"><div class="bar-fill" style="width:63%"></div></div><span class="bv">15,33tr</span></div>
+      <div class="bar-row"><span class="bl">313–465k</span><div class="bar-track"><div class="bar-fill" style="width:69%"></div></div><span class="bv">16,75tr</span></div>
+      <div class="bar-row"><span class="bl">Trên 465k</span><div class="bar-track"><div class="bar-fill orange" style="width:100%"></div></div><span class="bv">24,25tr</span></div>
+      <p class="mini" style="margin:10px 0 0">Nhóm đơn trên 465k chỉ chiếm 17% khách nhưng mang 40% doanh thu — quà tặng kèm từ 759k và bundle là đòn bẩy trực tiếp cho nhóm này. Nhóm 161–313k đông nhất (40% khách): mục tiêu là đẩy họ lên nấc 313–465k bằng set/bundle.</p>
+    </div>
+    <div class="panel">
+      <h3>Khách hàng: mới vs cũ</h3>
+      <div class="bar-row"><span class="bl">Khách mới</span><div class="bar-track"><div class="bar-fill" style="width:83%"></div></div><span class="bv">124 · 83%</span></div>
+      <div class="bar-row"><span class="bl">Khách cũ</span><div class="bar-track"><div class="bar-fill lav" style="width:17%"></div></div><span class="bv">25 · 17%</span></div>
+      <div class="bar-row"><span class="bl">Chuyển đổi khách mới</span><div class="bar-track"><div class="bar-fill" style="width:75%"></div></div><span class="bv">3,01%</span></div>
+      <div class="bar-row"><span class="bl">Chuyển đổi khách cũ</span><div class="bar-track"><div class="bar-fill red" style="width:23%"></div></div><span class="bv">0,90%</span></div>
+      <p class="mini" style="margin:10px 0 0">Nghịch lý: khách cũ chuyển đổi <b>thấp hơn</b> khách mới (0,90% vs 3,01%) và tỉ lệ mua lại chỉ 4,95%. Shop không có bundle, quà tặng kèm hay voucher cho đơn sau — khách mua xong là hết lý do quay lại.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIAGNOSIS ============ -->
+<section id="diag" aria-label="Chẩn đoán">
+  <div class="sec-head"><h2>Chẩn đoán — 8 vấn đề</h2></div>
+  <p class="sec-note">Lọc bằng nút <b>Góc nhìn</b> và <b>Mức độ</b> ở thanh lọc phía trên. Mỗi vấn đề kèm hướng xử lý tương ứng trong kế hoạch hành động.</p>
+  <div class="diag-grid" id="diagGrid">
+    <article class="diag" data-lens="revenue traffic" data-sev="crit" data-search="quảng cáo ads dvht roas gmv max số dư chiến dịch">
+      <div class="top"><span class="sev crit">Khẩn cấp</span><span class="lens-tag">Doanh thu · Traffic</span></div>
+      <h3>1. Quảng cáo đã tắt hẳn</h3>
+      <p>Số dư DVHT = 0đ, 20 chiến dịch GMV Max đều dừng. Tháng qua ads mang về 46,2tr doanh thu với 3,38tr chi phí (ROAS 13,67), riêng DIP ROAS 22,86. Ngày 13/11: doanh thu 0đ.</p>
+      <p class="fix"><b>Xử lý:</b> Nạp lại 5tr và chạy lại chiến dịch — việc #1 trong kế hoạch.</p>
+    </article>
+    <article class="diag" data-lens="revenue" data-sev="high" data-search="dip diptyque odyssey phụ thuộc một mã sku doanh thu tập trung">
+      <div class="top"><span class="sev high">Cao</span><span class="lens-tag">Doanh thu</span></div>
+      <h3>2. Phụ thuộc vào 1 mã, mã chủ lực cũ suy giảm</h3>
+      <p>DIP chiếm 31,8% doanh thu (18,2tr, +135%) trong khi Odyssey giảm 46% (còn 5,33tr). Chỉ 61/148 SKU có đơn trong 30 ngày; ~90 SKU không bán được.</p>
+      <p class="fix"><b>Xử lý:</b> Gọn danh mục về tối đa 15 mã chủ lực, dồn ngân sách ads cho mã đã chứng minh ROAS.</p>
+    </article>
+    <article class="diag" data-lens="conversion traffic" data-sev="high" data-search="chuyển đổi bỏ giỏ thêm vào giỏ đề xuất recommendations xem không mua">
+      <div class="top"><span class="sev high">Cao</span><span class="lens-tag">Chuyển đổi · Traffic</span></div>
+      <h3>3. Chuyển đổi giảm, khách bỏ giỏ nhiều</h3>
+      <p>Traffic −1,5% nhưng đơn −17,3%. 702 khách thêm giỏ, chỉ 154 khách đặt hàng. Nguồn Đề xuất mang 12% doanh thu nhưng chuyển đổi chỉ 0,59% — thấp nhất.</p>
+      <p class="fix"><b>Xử lý:</b> Sửa mô tả/giá mã bán chạy (việc #3, #4) — khách từ Đề xuất là khách lạnh, cần thông tin đầy đủ mới chốt.</p>
+    </article>
+    <article class="diag" data-lens="conversion ops" data-sev="high" data-search="hủy đơn cod hoàn đơn đặt xác nhận lý do hủy">
+      <div class="top"><span class="sev high">Cao</span><span class="lens-tag">Chuyển đổi · Vận hành</span></div>
+      <h3>4. Hủy đơn ~20%</h3>
+      <p>35/177 đơn đặt bị hủy. Doanh thu rơi từ 68,5tr (lúc đặt) xuống 60,2tr (lúc xác nhận) — mất ~8tr. Chưa rõ lý do hủy đứng đầu (COD, giá, chờ tư vấn…).</p>
+      <p class="fix"><b>Xử lý:</b> Xem lý do hủy trong Seller Centre và sửa nguyên nhân đứng đầu (việc #14). Mục tiêu: &lt;12%.</p>
+    </article>
+    <article class="diag" data-lens="retention revenue" data-sev="high" data-search="giữ chân khách cũ mua lại repeat voucher đơn sau bundle quà tặng">
+      <div class="top"><span class="sev high">Cao</span><span class="lens-tag">Giữ chân · Doanh thu</span></div>
+      <h3>5. Không giữ được khách cũ</h3>
+      <p>Khách mới 83%, mua lại 4,95%. Khách cũ chuyển đổi 0,90% — thấp hơn cả khách mới (3,01%). Không bundle, không quà tặng kèm, không voucher đơn sau.</p>
+      <p class="fix"><b>Xử lý:</b> Nhắn lại 124 khách mới + voucher đơn sau (việc #13), quà tặng kèm từ 759k (việc #10).</p>
+    </article>
+    <article class="diag" data-lens="conversion ops" data-sev="med" data-search="hawas mô tả trống odyssey dip mùi note lưu hương giá lệch delilah đánh giá">
+      <div class="top"><span class="sev med">Trung bình</span><span class="lens-tag">Chuyển đổi · Vận hành</span></div>
+      <h3>6. Trang sản phẩm thiếu thông tin ở đúng mã bán chạy</h3>
+      <p>Hawas (top 5) mô tả trống trơn. Odyssey 14 mùi nhưng mô tả chỉ 5; DIP 9 mùi chỉ 3. Giá DIP lệch: trang shop 345k, trang sản phẩm 360k–960k. 183/326 đánh giá chưa trả lời; Delilah Blanc có đánh giá 3 sao (mùi cồn) + 2 đánh giá rác chưa xử lý.</p>
+      <p class="fix"><b>Xử lý:</b> Việc #3, #4, #5 — toàn quick win, không tốn tiền.</p>
+    </article>
+    <article class="diag" data-lens="traffic revenue conversion" data-sev="med" data-search="live video flash sale khuyến mãi voucher công cụ kéo đơn rose4pt thông minh">
+      <div class="top"><span class="sev med">Trung bình</span><span class="lens-tag">Traffic · Doanh thu</span></div>
+      <h3>7. Không dùng công cụ kéo đơn nào</h3>
+      <p>Live 0 · Video 0 · Flash Sale 0 · Khuyến mãi 0 trong 30 ngày. Voucher mang 50,7tr doanh thu nhưng tỉ lệ dùng chỉ 7,07%, đơn qua voucher −21%. Voucher Thông Minh: 834 lượt lấy, chỉ 23 đơn (2,76%); ROSE4PT 4% tốt nhất (31 đơn, 21,23%).</p>
+      <p class="fix"><b>Xử lý:</b> Flash Sale + live 1 buổi/tuần (việc #12); giữ voucher dạng ROSE4PT, bỏ voucher Thông Minh kém hiệu quả.</p>
+    </article>
+    <article class="diag" data-lens="traffic ops" data-sev="med" data-search="followers đối thủ quy mô giá cạnh tranh blume authen thescents chính hãng">
+      <div class="top"><span class="sev med">Trung bình</span><span class="lens-tag">Traffic · Vận hành</span></div>
+      <h3>8. Quy mô nhỏ hơn hẳn đối thủ — nhưng giá cạnh tranh</h3>
+      <p>652 followers so với Blume 36.700, T.H.E.S.C.E.N.T 59.700. Nhưng giá Rosemary rẻ hơn/ngang ở mã chủ lực: Delilah 120k (Blume 199k), Hawas từ 140k (đối thủ 150–160k), Odyssey 135k (Blume 192k). Vấn đề là traffic, chuyển đổi, giữ chân — không phải giá.</p>
+      <p class="fix"><b>Xử lý:</b> Không đua giá xuống tầng 139–155k (hàng sản xuất tại VN). Giữ lợi thế chính hãng + dịch vụ 5.0 sao; tăng followers và affiliate (việc #17).</p>
+    </article>
+  </div>
+  <div class="empty" id="diagEmpty">Không có vấn đề nào khớp bộ lọc hiện tại.</div>
+</section>
+
+<!-- ============ PRODUCTS ============ -->
+<section id="products" aria-label="Sản phẩm">
+  <div class="sec-head"><h2>Sản phẩm chủ lực</h2></div>
+  <p class="sec-note">Doanh thu 30 ngày theo Seller Centre (nơi có số); lượt bán theo trang công khai Shopee (tỉ lệ của sàn, không phải doanh số đúng kỳ). Bấm tiêu đề cột để sắp xếp. Ô tìm kiếm phía trên cũng lọc bảng này.</p>
+  <div class="tablebox">
+    <table class="resp" id="prodTable">
+      <thead><tr>
+        <th class="sortable" data-sort="name">Sản phẩm ↕</th>
+        <th class="num sortable" data-sort="rev">Doanh thu 30 ngày ↕</th>
+        <th class="num sortable" data-sort="share">% Doanh thu ↕</th>
+        <th class="num sortable" data-sort="month">Bán/tháng (công khai) ↕</th>
+        <th class="num sortable" data-sort="total">Tổng đã bán ↕</th>
+        <th>Ghi chú</th>
+      </tr></thead>
+      <tbody>
+        <tr data-name="dip diptyque" data-rev="18200000" data-share="31.8" data-month="29" data-total="147">
+          <td data-l="Sản phẩm">DIP (Diptyque)</td><td class="num" data-l="DT 30 ngày">18,2tr</td><td class="num" data-l="% DT">31,8%</td><td class="num" data-l="Bán/tháng">29</td><td class="num" data-l="Tổng bán">147</td>
+          <td data-l="Ghi chú"><span class="tag-soft">Mã chủ lực</span> <span class="mini">ROAS ads 22,86 · tăng 135% · giá hiển thị đang lệch, mô tả thiếu 6/9 mùi</span></td>
+        </tr>
+        <tr data-name="odyssey dubai chocolate" data-rev="5330000" data-share="9.3" data-month="27" data-total="402">
+          <td data-l="Sản phẩm">Odyssey (Dubai Chocolate)</td><td class="num" data-l="DT 30 ngày">5,33tr</td><td class="num" data-l="% DT">9,3%</td><td class="num" data-l="Bán/tháng">27</td><td class="num" data-l="Tổng bán">402</td>
+          <td data-l="Ghi chú"><span class="tag-warn">Đang giảm 46%</span> <span class="mini">Mã tích lũy cao nhất shop nhưng mô tả chỉ viết 5/14 mùi</span></td>
+        </tr>
+        <tr data-name="bloom gucci flora" data-rev="-1" data-share="-1" data-month="18" data-total="87">
+          <td data-l="Sản phẩm">Bloom (Gucci Flora)</td><td class="num" data-l="DT 30 ngày">—</td><td class="num" data-l="% DT">—</td><td class="num" data-l="Bán/tháng">18</td><td class="num" data-l="Tổng bán">87</td>
+          <td data-l="Ghi chú"><span class="mini">Top 3 bán/tháng · giá 135k, rẻ hơn Blume (192k ở mã tương đương)</span></td>
+        </tr>
+        <tr data-name="hawas rasasi" data-rev="-1" data-share="-1" data-month="9" data-total="46">
+          <td data-l="Sản phẩm">Hawas (Rasasi)</td><td class="num" data-l="DT 30 ngày">—</td><td class="num" data-l="% DT">—</td><td class="num" data-l="Bán/tháng">9</td><td class="num" data-l="Tổng bán">46</td>
+          <td data-l="Ghi chú"><span class="tag-bad">Mô tả trống</span> <span class="mini">Top 5 doanh thu nhưng không có note mùi/lưu hương · giá từ 140k, rẻ hơn đối thủ 150–160k</span></td>
+        </tr>
+        <tr data-name="delilah blanc" data-rev="-1" data-share="-1" data-month="6" data-total="55">
+          <td data-l="Sản phẩm">Delilah Blanc</td><td class="num" data-l="DT 30 ngày">—</td><td class="num" data-l="% DT">—</td><td class="num" data-l="Bán/tháng">6</td><td class="num" data-l="Tổng bán">55</td>
+          <td data-l="Ghi chú"><span class="tag-warn">Có đánh giá 3 sao</span> <span class="mini">Giá 120k vs Blume 199k · 1 đánh giá mùi cồn + 2 đánh giá rác chưa xử lý</span></td>
+        </tr>
+        <tr data-name="le sel issey" data-rev="-1" data-share="-1" data-month="0" data-total="114">
+          <td data-l="Sản phẩm">Le Sel d'Issey</td><td class="num" data-l="DT 30 ngày">—</td><td class="num" data-l="% DT">—</td><td class="num" data-l="Bán/tháng">—</td><td class="num" data-l="Tổng bán">114</td>
+          <td data-l="Ghi chú"><span class="mini">Top 3 tích lũy toàn shop · đối thủ Niixt đã bán 239 ở mã này</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sec-note" style="margin-top:10px">Toàn cảnh: 148 sản phẩm, chỉ <b>61 SKU có đơn</b> trong 30 ngày, ít nhất 22 sản phẩm không hiển thị lượt bán nào. Top 3 mã tích lũy (Odyssey 402 · DIP 147 · Le Sel 114) áp đảo cả gian hàng.</p>
+</section>
+
+<!-- ============ ADS & BUDGET ============ -->
+<section id="ads" aria-label="Quảng cáo và ngân sách">
+  <div class="sec-head"><h2>Quảng cáo — hiệu quả &amp; đề xuất ngân sách</h2></div>
+  <p class="sec-note">Tháng qua: chi 3,38tr → 46,2tr doanh thu, ROAS 13,67, chi phí ads chỉ bằng 7,3% doanh thu quảng cáo. Với biên đóng góp ~30%, ads chỉ lỗ khi ROAS rơi dưới ~3 — dư địa tăng chi còn lớn. Kéo thanh trượt để mô phỏng các mức nạp.</p>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Mã quảng cáo cần xử lý ngay</h3>
+      <div class="tablebox" style="box-shadow:none;border:0">
+        <table class="resp">
+          <thead><tr><th>Mã</th><th class="num">ROAS</th><th>Quyết định</th></tr></thead>
+          <tbody>
+            <tr><td data-l="Mã">DIP (Diptyque)</td><td class="num" data-l="ROAS">22,86</td><td data-l="Quyết định"><span class="tag-soft">Ưu tiên chạy lại đầu tiên</span></td></tr>
+            <tr><td data-l="Mã">VALEN Born In Roma</td><td class="num" data-l="ROAS">0 đơn</td><td data-l="Quyết định"><span class="tag-bad">Tạm dừng</span></td></tr>
+            <tr><td data-l="Mã">TOY 2</td><td class="num" data-l="ROAS">0 đơn</td><td data-l="Quyết định"><span class="tag-bad">Tạm dừng</span></td></tr>
+            <tr><td data-l="Mã">SCANDAL EDP</td><td class="num" data-l="ROAS">0 đơn</td><td data-l="Quyết định"><span class="tag-bad">Tạm dừng</span></td></tr>
+            <tr><td data-l="Mã">Signa-ture Elixir</td><td class="num" data-l="ROAS">0 đơn</td><td data-l="Quyết định"><span class="tag-bad">Tạm dừng</span> <span class="mini">4 mã này đốt ~180k, 0đ doanh thu</span></td></tr>
+            <tr><td data-l="Mã">Nar hồng</td><td class="num" data-l="ROAS">4,23</td><td data-l="Quyết định"><span class="tag-warn">Xem lại — 0 đơn</span></td></tr>
+            <tr><td data-l="Mã">Mercedes CLUB BLACK</td><td class="num" data-l="ROAS">2,66</td><td data-l="Quyết định"><span class="tag-warn">Xem lại — dưới ngưỡng an toàn</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mini" style="margin:10px 0 0">Luật cắt lỗ: mã nào chi trên 100k mà ROAS dưới 5 thì dừng; kiểm tra ROAS mỗi tuần. Mã chuyển đổi cao nhưng ít traffic đáng thử ngân sách nhỏ: Signa.ture 9,76%, The Only One 12,50%.</p>
+    </div>
+    <div class="panel">
+      <div class="budget-head">
+        <h3 style="margin:0">Mô phỏng nạp ngân sách</h3>
+        <div class="budget-total" id="budgetTotal">5.000.000đ</div>
+      </div>
+      <input type="range" id="budgetRange" min="3000000" max="8000000" step="250000" value="5000000" aria-label="Tổng ngân sách quảng cáo" />
+      <div style="display:flex;justify-content:space-between" class="mini"><span>3tr (ngang nhịp cũ)</span><span>8tr</span></div>
+      <div class="splitbar" aria-hidden="true">
+        <div id="splitRestore" style="background:#3F5A4A;width:70%">Khôi phục 70%</div>
+        <div id="splitGrowth" style="background:#EE4D2D;width:30%">Tăng trưởng 30%</div>
+      </div>
+      <div class="legend"><span><i style="background:#3F5A4A"></i>Khôi phục — chạy lại đúng nhịp tháng trước</span><span><i style="background:#EE4D2D"></i>Tăng trưởng — đẩy GMV về 3tr/ngày</span></div>
+      <div id="budgetRows"></div>
+      <p class="mini" id="budgetExpect" style="margin:10px 0 0"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPETITORS ============ -->
+<section id="comp" aria-label="Đối thủ">
+  <div class="sec-head"><h2>Đối thủ — học gì, tránh gì</h2></div>
+  <p class="sec-note">Giá đối thủ chụp ngày 13/11/2026. Rosemary thua hẳn về quy mô followers nhưng thắng về sao (5.0) và giá ở mã chủ lực. Bấm tiêu đề cột để sắp xếp.</p>
+  <div class="tablebox">
+    <table class="resp" id="compTable">
+      <thead><tr>
+        <th class="sortable" data-sort="name">Shop ↕</th>
+        <th class="num sortable" data-sort="fol">Followers ↕</th>
+        <th class="num sortable" data-sort="rate">Đánh giá ↕</th>
+        <th class="num sortable" data-sort="sku">Sản phẩm ↕</th>
+        <th>Điểm mạnh đáng học</th>
+      </tr></thead>
+      <tbody>
+        <tr data-name="rosemary" data-fol="652" data-rate="5.0" data-sku="148">
+          <td data-l="Shop"><b>Rosemary (shop của mình)</b></td><td class="num" data-l="Followers">652</td><td class="num" data-l="Đánh giá">5.0 (326)</td><td class="num" data-l="SP">148</td>
+          <td data-l="Đáng học">Badge Yêu Thích · chat 100% · giá rẻ hơn/ngang đối thủ ở mã chủ lực</td>
+        </tr>
+        <tr data-name="blume" data-fol="36700" data-rate="5.0" data-sku="245">
+          <td data-l="Shop">Blume — Tiệm Nước Hoa</td><td class="num" data-l="Followers">36.700</td><td class="num" data-l="Đánh giá">5.0 (1.500)</td><td class="num" data-l="SP">245</td>
+          <td data-l="Đáng học">Mô tả chi tiết nhất: note mùi, lưu hương 6–8h, tỏa hương ~1m, có video — chuẩn cần sao chép cho Hawas/Odyssey/DIP</td>
+        </tr>
+        <tr data-name="the authen" data-fol="18000" data-rate="4.9" data-sku="544">
+          <td data-l="Shop">The Authen Perfume</td><td class="num" data-l="Followers">18.000</td><td class="num" data-l="Đánh giá">4.9 (2.000)</td><td class="num" data-l="SP">544</td>
+          <td data-l="Đáng học">Set mini bán 1.000+, quà tặng khi mua 759k, set 3x10ml — mô hình cho việc #10, #11</td>
+        </tr>
+        <tr data-name="niixt" data-fol="2600" data-rate="5.0" data-sku="357">
+          <td data-l="Shop">Niixt Parfums</td><td class="num" data-l="Followers">2.600</td><td class="num" data-l="Đánh giá">5.0 (1.100)</td><td class="num" data-l="SP">357</td>
+          <td data-l="Đáng học">Set mẫu nam bán 84 · Le Sel d'Issey bán 239 (gấp đôi Rosemary)</td>
+        </tr>
+        <tr data-name="hidden gem" data-fol="3000" data-rate="4.9" data-sku="419">
+          <td data-l="Shop">Hidden gem perfume</td><td class="num" data-l="Followers">3.000</td><td class="num" data-l="Đánh giá">4.9 (4.200)</td><td class="num" data-l="SP">419</td>
+          <td data-l="Đáng học">Hawas Ice bán 60 · Marwa bán 509 — nhu cầu dòng Hawas còn lớn, Rosemary đang để trống mô tả</td>
+        </tr>
+        <tr data-name="thescents" data-fol="59700" data-rate="4.9" data-sku="0">
+          <td data-l="Shop">T.H.E.S.C.E.N.T (tầng giá rẻ)</td><td class="num" data-l="Followers">59.700</td><td class="num" data-l="Đánh giá">4.9</td><td class="num" data-l="SP">—</td>
+          <td data-l="Đáng học"><span class="tag-bad">Không đua theo</span> Giá 90–155k, mua 2 giảm 2%; Diptyque 139–155k là hàng sản xuất tại VN — Rosemary giữ vị thế chính hãng</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="sec-note" style="margin-top:10px">So giá mã chủ lực: Delilah — Rosemary <b>120k</b> vs Blume 199k · Hawas — Rosemary từ <b>140k</b> vs đối thủ 150–160k · Odyssey — Rosemary <b>135k</b> vs Blume 192k · Diptyque — Rosemary tầm giữa (dưới The Authen 590k/10ml Papier, trên tầng giá rẻ 139–155k).</p>
+</section>
+
+<!-- ============ ACTIONS ============ -->
+<section id="actions" aria-label="Kế hoạch hành động">
+  <div class="sec-head"><h2>Kế hoạch hành động — 18 việc</h2></div>
+  <p class="sec-note">Lọc bằng nút <b>Hành động</b> (thời hạn), <b>Góc nhìn</b> và ô tìm kiếm ở thanh lọc phía trên. Tất cả các việc do Hoàng thực hiện; việc #1 đang chờ chốt số tiền nạp.</p>
+  <div id="actWrap">
+    <h3 class="horizon-title">Làm ngay tuần này — quick win</h3>
+    <div class="act-list">
+      <div class="act" data-horizon="week" data-lens="revenue traffic" data-search="nạp tiền quảng cáo dvht chạy lại chiến dịch dip roas ngân sách">
+        <span class="n">1</span><div><div class="t">Nạp lại tiền quảng cáo DVHT và chạy lại chiến dịch</div><div class="mini">Đề xuất 5tr (tháng trước chi 3,38tr). Ưu tiên DIP (ROAS 22,86) trước. Đang chờ chốt số tiền nạp.</div></div><span class="imp top">Cao nhất</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="revenue traffic" data-search="tạm dừng mã quảng cáo valen toy scandal signa-ture elixir nar mercedes đốt tiền">
+        <span class="n">2</span><div><div class="t">Tạm dừng 4 mã ads đốt tiền (VALEN, TOY 2, SCANDAL, Signa-ture Elixir)</div><div class="mini">~180k chi, 0đ doanh thu. Xem lại thêm Nar hồng (ROAS 4,23) và Mercedes CLUB BLACK (2,66).</div></div><span class="imp">Tiết kiệm ngân sách</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="conversion" data-search="viết mô tả hawas odyssey dip mùi note lưu hương">
+        <span class="n">3</span><div><div class="t">Viết mô tả đầy đủ cho Hawas (5 mùi), bổ sung 9 mùi Odyssey và 6 mùi DIP còn thiếu</div><div class="mini">Theo chuẩn Blume: note mùi, lưu hương, tỏa hương. Đúng các mã đang bán chạy nhất.</div></div><span class="imp">Tăng chuyển đổi</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="conversion ops" data-search="sửa giá dip lệch trang shop trang sản phẩm 345k 360k">
+        <span class="n">4</span><div><div class="t">Sửa giá DIP cho khớp giữa trang shop và trang sản phẩm</div><div class="mini">Trang shop 345k (−4%), trang sản phẩm 360k–960k không giảm — khách bấm vào thấy giá khác là mất lòng tin.</div></div><span class="imp">Tăng tin cậy</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="retention ops" data-search="trả lời đánh giá 183 review delilah 3 sao báo cáo rác spam">
+        <span class="n">5</span><div><div class="t">Trả lời 183 đánh giá chưa trả lời; báo cáo 2 đánh giá rác</div><div class="mini">Ưu tiên đánh giá mới và đánh giá 3 sao của Delilah Blanc. Miễn phí, tăng điểm tin cậy.</div></div><span class="imp">Tăng tin cậy</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="conversion ops" data-search="chat phản hồi 43 phút 15 phút trả lời chậm chốt đơn">
+        <span class="n">6</span><div><div class="t">Rút ngắn phản hồi chat đầu tiên xuống dưới 15 phút</div><div class="mini">Hiện 43 phút (tăng 423% so kỳ trước). Tỉ lệ chốt đơn qua chat hiện 7,14% — trả lời nhanh hơn là chốt nhiều hơn.</div></div><span class="imp">Tăng chốt đơn</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="ops traffic" data-search="xóa danh mục trùng banner mô tả shop gian hàng tươi mát hàng ngày">
+        <span class="n">7</span><div><div class="t">Xóa danh mục trùng, thêm banner + mô tả shop</div><div class="mini">Danh mục "Tươi mát - Hàng ngày" đang xuất hiện 2 lần; shop chưa có banner.</div></div><span class="imp">Gian hàng gọn hơn</span>
+      </div>
+      <div class="act" data-horizon="week" data-lens="ops conversion" data-search="hết hàng daisy philosykos a-mee arie nhập lại gỡ">
+        <span class="n">8</span><div><div class="t">Nhập lại 3 mã hết hàng hoặc gỡ khỏi gian hàng</div><div class="mini">Daisy Eau So Fresh, Philosykos EDP, A-Mee Arie — không để khách bấm vào mã hết hàng.</div></div><span class="imp">Giảm trải nghiệm xấu</span>
+      </div>
+    </div>
+
+    <h3 class="horizon-title">2–4 tuần tới</h3>
+    <div class="act-list">
+      <div class="act" data-horizon="month" data-lens="revenue retention" data-search="bundle set wake focus unwind dịp 3x10ml giá trị đơn">
+        <span class="n">9</span><div><div class="t">Làm bundle/set theo dịp WAKE / FOCUS / UNWIND + set 3x10ml</div><div class="mini">Đúng định vị Rosemary. Mục tiêu: đẩy AOV 387k → 420k+, kéo nhóm đơn 161–313k lên nấc trên.</div></div><span class="imp">Tăng giá trị đơn</span>
+      </div>
+      <div class="act" data-horizon="month" data-lens="revenue retention" data-search="quà tặng kèm 759k lọ mẫu ngẫu nhiên authen đơn giá trị cao">
+        <span class="n">10</span><div><div class="t">Quà tặng kèm khi mua từ 759k (1 lọ mẫu ngẫu nhiên 1–2ml)</div><div class="mini">Học The Authen. Nhắm nhóm đơn trên 465k — 17% khách mang 40% doanh thu.</div></div><span class="imp">Tăng đơn giá trị cao</span>
+      </div>
+      <div class="act" data-horizon="month" data-lens="traffic retention" data-search="lọ mẫu 99k cửa vào thử lần đầu khách mới rào cản">
+        <span class="n">11</span><div><div class="t">Thêm lọ mẫu ngẫu nhiên 1–2ml giá ~99k làm cửa vào</div><div class="mini">The Authen bán 1.000+ lọ loại này — hạ rào cản thử lần đầu, kéo khách mới rẻ.</div></div><span class="imp">Kéo khách mới</span>
+      </div>
+      <div class="act" data-horizon="month" data-lens="traffic revenue" data-search="flash sale livestream live dip odyssey nguồn đơn mới">
+        <span class="n">12</span><div><div class="t">Đăng ký Flash Sale của shop + livestream 1 buổi/tuần (DIP/Odyssey)</div><div class="mini">Hiện Live, Video, Flash Sale đều = 0 trong 30 ngày — đây là nguồn đơn mới ngoài quảng cáo.</div></div><span class="imp">Nguồn đơn mới</span>
+      </div>
+      <div class="act" data-horizon="month" data-lens="retention" data-search="nhắn lại 124 khách mới cảm ơn voucher đơn sau xin đánh giá mua lại">
+        <span class="n">13</span><div><div class="t">Nhắn lại 124 khách mới: cảm ơn + voucher đơn sau + xin đánh giá</div><div class="mini">Mục tiêu: mua lại 4,95% → 8%+, tỉ lệ đánh giá 18% → 25%+.</div></div><span class="imp">Tăng mua lại</span>
+      </div>
+      <div class="act" data-horizon="month" data-lens="conversion ops" data-search="lý do hủy đơn 35 seller centre sửa nguyên nhân cod giá tư vấn">
+        <span class="n">14</span><div><div class="t">Xem lý do 35 đơn hủy trong Seller Centre, sửa nguyên nhân đứng đầu</div><div class="mini">Mục tiêu: tỉ lệ hủy ~20% → dưới 12%, giữ lại phần trong ~8tr doanh thu đang rơi.</div></div><span class="imp">Giảm hủy đơn</span>
+      </div>
+      <div class="act" data-horizon="month" data-lens="conversion revenue" data-search="freeship xtra voucher freeship phí tham gia đối thủ">
+        <span class="n">15</span><div><div class="t">Đánh giá tham gia Freeship Xtra</div><div class="mini">Hiện shop không có voucher freeship nào trong khi đối thủ quảng cáo FREESHIP rõ ràng. Cân đối lợi ích chuyển đổi với phí tham gia.</div></div><span class="imp">Tăng chuyển đổi</span>
+      </div>
+    </div>
+
+    <h3 class="horizon-title">Dài hạn</h3>
+    <div class="act-list">
+      <div class="act" data-horizon="long" data-lens="ops revenue" data-search="gọn danh mục 90 sku gộp set gỡ 15 mã chủ lực quản lý">
+        <span class="n">16</span><div><div class="t">Gọn danh mục: ~90 SKU không bán được thì gộp thành set hoặc gỡ</div><div class="mini">Tập trung tối đa 15 mã chủ lực — đúng quy tắc Rosemary. Giảm chi phí quản lý, dồn lực vào mã bán được.</div></div><span class="imp">Giảm chi phí quản lý</span>
+      </div>
+      <div class="act" data-horizon="long" data-lens="traffic retention" data-search="followers ưu đãi follow shop affiliate facebook tiktok traffic tự nhiên">
+        <span class="n">17</span><div><div class="t">Tăng followers + mở rộng affiliate, kéo traffic Facebook/TikTok về Shopee</div><div class="mini">Affiliate đã mang 9% doanh thu (5,07tr) — còn dư địa lớn. Mục tiêu: giảm phụ thuộc quảng cáo.</div></div><span class="imp">Traffic tự nhiên</span>
+      </div>
+      <div class="act" data-horizon="long" data-lens="revenue" data-search="dòng sản phẩm riêng rosemary desk mist discovery kit diffuser thương hiệu biên lãi">
+        <span class="n">18</span><div><div class="t">Đưa dòng riêng Rosemary lên Shopee (Desk Mist, Discovery Kit, diffuser)</div><div class="mini">Hiện shop mới bán chiết các hãng khác. Dòng riêng = thương hiệu riêng + biên lãi cao hơn.</div></div><span class="imp">Xây thương hiệu</span>
+      </div>
+    </div>
+  </div>
+  <div class="empty" id="actEmpty">Không có việc nào khớp bộ lọc hiện tại.</div>
+</section>
+
+<!-- ============ KPI TARGETS ============ -->
+<section id="targets" aria-label="KPI mục tiêu">
+  <div class="sec-head"><h2>KPI mục tiêu sau 30 ngày</h2></div>
+  <p class="sec-note">Thanh tiến độ = mức hiện tại so với mục tiêu. Đạt đủ bộ này tương đương GMV ≈ 2,2tr/ngày; muốn chạm 3tr/ngày (mục tiêu Q4) cần chạy đủ cả 3: ads nạp lại + bundle/set + live/flash sale.</p>
+  <div class="tablebox">
+    <table class="resp">
+      <thead><tr><th>Chỉ số</th><th class="num">Hiện tại</th><th class="num">Mục tiêu</th><th>Tiến độ</th></tr></thead>
+      <tbody>
+        <tr><td data-l="Chỉ số">Doanh thu (đã thanh toán)</td><td class="num" data-l="Hiện tại">57,3tr</td><td class="num" data-l="Mục tiêu">≥ 65tr</td><td data-l="Tiến độ"><div class="prog"><i style="width:88%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Đơn hàng</td><td class="num" data-l="Hiện tại">148</td><td class="num" data-l="Mục tiêu">≥ 170</td><td data-l="Tiến độ"><div class="prog"><i style="width:87%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Tỉ lệ chuyển đổi</td><td class="num" data-l="Hiện tại">1,33%</td><td class="num" data-l="Mục tiêu">≥ 1,6%</td><td data-l="Tiến độ"><div class="prog"><i class="amber" style="width:83%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Giá trị đơn trung bình</td><td class="num" data-l="Hiện tại">387k</td><td class="num" data-l="Mục tiêu">≥ 420k</td><td data-l="Tiến độ"><div class="prog"><i style="width:92%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Tỉ lệ mua lại</td><td class="num" data-l="Hiện tại">4,95%</td><td class="num" data-l="Mục tiêu">≥ 8%</td><td data-l="Tiến độ"><div class="prog"><i class="amber" style="width:62%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Tỉ lệ hủy đơn (càng thấp càng tốt)</td><td class="num" data-l="Hiện tại">~20%</td><td class="num" data-l="Mục tiêu">&lt; 12%</td><td data-l="Tiến độ"><div class="prog"><i class="red" style="width:40%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Phản hồi chat đầu tiên (càng thấp càng tốt)</td><td class="num" data-l="Hiện tại">43 phút</td><td class="num" data-l="Mục tiêu">&lt; 15 phút</td><td data-l="Tiến độ"><div class="prog"><i class="red" style="width:35%"></i></div></td></tr>
+        <tr><td data-l="Chỉ số">Đánh giá mới được trả lời</td><td class="num" data-l="Hiện tại">143/326 đã trả lời</td><td class="num" data-l="Mục tiêu">100% đánh giá mới</td><td data-l="Tiến độ"><div class="prog"><i class="amber" style="width:44%"></i></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <p><b>Giới hạn của số liệu</b></p>
+  <ul>
+    <li>Kỳ 30 ngày của Seller Centre là 14/10–12/11/2026 (ngày đầy đủ), không gồm 13/11.</li>
+    <li>Shopee có 2 cách tính đơn: đã thanh toán 148 đơn / đã xác nhận 162 đơn — báo cáo dùng số đã thanh toán làm chuẩn chính.</li>
+    <li>Không có danh sách từ khóa riêng của shop; không có số liệu sản phẩm 0 lượt xem.</li>
+    <li>Số "bán/tháng" trên trang công khai là tỉ lệ của Shopee, không phải doanh số đúng kỳ 14/10–12/11.</li>
+    <li>Giá đối thủ chụp ngày 13/11/2026, có thể thay đổi theo chương trình khuyến mãi.</li>
+    <li>Mô phỏng ngân sách quảng cáo dùng ROAS tháng trước (13,67) làm mốc và giả định ROAS giảm dần khi tăng chi — là ước tính để ra quyết định, không phải cam kết doanh thu.</li>
+  </ul>
+  <p>Nguồn dữ liệu: Seller Centre + trang công khai shop Tiệm thơm Rosemary và 5 shop đối thủ, rà soát ngày 13/11/2026.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---- Theme: Sang / Toi / Tu dong (in-memory only, khong luu tru) ---- */
+  var themeMode = "auto";
+  var themeHint = document.getElementById("themeHint");
+  var metaScheme = document.getElementById("metaColorScheme");
+  function systemTheme(){
+    return (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "light";
+  }
+  function applyTheme(){
+    var resolved = themeMode === "auto" ? systemTheme() : themeMode;
+    document.documentElement.setAttribute("data-theme", resolved);
+    document.documentElement.setAttribute("data-theme-mode", themeMode);
+    if(metaScheme) metaScheme.setAttribute("content", resolved);
+    document.querySelectorAll("[data-theme-btn]").forEach(function(b){
+      b.classList.toggle("on", b.getAttribute("data-theme-btn") === themeMode);
+    });
+    if(themeHint){
+      if(themeMode === "light") themeHint.textContent = "Đang dùng nền sáng (light mode)";
+      else if(themeMode === "dark") themeHint.textContent = "Đang dùng nền tối (dark mode)";
+      else themeHint.textContent = "Đang theo hệ thống — hiện là " + (resolved === "dark" ? "tối" : "sáng");
+    }
+  }
+  document.querySelectorAll("[data-theme-btn]").forEach(function(b){
+    b.addEventListener("click", function(){
+      themeMode = b.getAttribute("data-theme-btn");
+      applyTheme();
+    });
+  });
+  if(window.matchMedia){
+    var mq = window.matchMedia("(prefers-color-scheme: dark)");
+    if(mq.addEventListener) mq.addEventListener("change", function(){ if(themeMode === "auto") applyTheme(); });
+    else if(mq.addListener) mq.addListener(function(){ if(themeMode === "auto") applyTheme(); });
+  }
+  applyTheme();
+
+  var state = { lens:"all", sev:"all", horizon:"all", q:"" };
+
+  function chipGroup(attr, key){
+    var chips = document.querySelectorAll("[data-"+attr+"]");
+    chips.forEach(function(c){
+      c.addEventListener("click", function(){
+        chips.forEach(function(x){ x.classList.remove("on"); });
+        c.classList.add("on");
+        state[key] = c.getAttribute("data-"+attr);
+        apply();
+      });
+    });
+  }
+  chipGroup("lens","lens");
+  chipGroup("sev","sev");
+  chipGroup("horizon","horizon");
+
+  var qInput = document.getElementById("q");
+  qInput.addEventListener("input", function(){ state.q = qInput.value.trim().toLowerCase(); apply(); });
+
+  function matchLens(el){
+    if(state.lens==="all") return true;
+    var l = el.getAttribute("data-lens")||"";
+    return l.split(" ").indexOf(state.lens) !== -1;
+  }
+  function matchQ(el){
+    if(!state.q) return true;
+    var t = (el.textContent + " " + (el.getAttribute("data-search")||"")).toLowerCase();
+    return t.indexOf(state.q) !== -1;
+  }
+
+  function apply(){
+    // Diagnosis cards: lens + severity + search
+    var dShow = 0;
+    document.querySelectorAll("#diagGrid .diag").forEach(function(el){
+      var ok = matchLens(el) && (state.sev==="all" || el.getAttribute("data-sev")===state.sev) && matchQ(el);
+      el.classList.toggle("hidden", !ok); if(ok) dShow++;
+    });
+    document.getElementById("diagEmpty").style.display = dShow ? "none" : "block";
+
+    // Actions: horizon + lens + search; hide empty horizon groups
+    var aShow = 0;
+    document.querySelectorAll("#actWrap .act").forEach(function(el){
+      var ok = (state.horizon==="all" || el.getAttribute("data-horizon")===state.horizon) && matchLens(el) && matchQ(el);
+      el.classList.toggle("hidden", !ok); if(ok) aShow++;
+    });
+    document.querySelectorAll("#actWrap > div.act-list, #actWrap .act-list").forEach(function(list){
+      var anyVisible = false;
+      list.querySelectorAll(".act").forEach(function(a){ if(!a.classList.contains("hidden")) anyVisible = true; });
+      list.classList.toggle("hidden", !anyVisible);
+      var title = list.previousElementSibling;
+      if(title && title.classList.contains("horizon-title")) title.classList.toggle("hidden", !anyVisible);
+    });
+    document.getElementById("actEmpty").style.display = aShow ? "none" : "block";
+
+    // Product rows: search only
+    var pShow = 0;
+    document.querySelectorAll("#prodTable tbody tr").forEach(function(el){
+      var ok = matchQ(el);
+      el.classList.toggle("hidden", !ok); if(ok) pShow++;
+    });
+
+    var fc = document.getElementById("fcount");
+    var parts = [];
+    parts.push("Đang hiện <b>"+dShow+"/8</b> vấn đề · <b>"+aShow+"/18</b> việc · <b>"+pShow+"/6</b> sản phẩm chủ lực");
+    if(state.lens!=="all"||state.sev!=="all"||state.horizon!=="all"||state.q) parts.push("— bấm lại chip đang chọn hoặc xóa ô tìm để xem toàn bộ");
+    fc.innerHTML = parts.join(" ");
+  }
+
+  /* ---- Traffic metric toggle ---- */
+  var trafficData = {
+    rev:  [ {label:"Tìm kiếm", val:44, disp:"44%", cls:""}, {label:"Trang shop", val:28, disp:"28%", cls:""}, {label:"Đề xuất", val:12, disp:"12%", cls:"orange"}, {label:"Affiliate", val:9, disp:"9% · 5,07tr", cls:"gold"}, {label:"Nguồn khác", val:7, disp:"~7%", cls:"lav"} ],
+    conv: [ {label:"Tìm kiếm", val:100, disp:"1,96%", cls:""}, {label:"Trang shop", val:70, disp:"1,38%", cls:""}, {label:"Đề xuất", val:30, disp:"0,59%", cls:"red"}, {label:"Toàn shop", val:68, disp:"1,33%", cls:"gold"} ]
+  };
+  var trafficNote = {
+    rev: "Tìm kiếm là nguồn chính và chuyển đổi tốt nhất. Đề xuất có traffic nhưng chuyển đổi yếu nhất (0,59%) — đây là đoạn cần sửa nội dung trang sản phẩm.",
+    conv: "Chuyển đổi theo nguồn: Tìm kiếm 1,96% cao nhất, Đề xuất 0,59% chỉ bằng 1/3. Khách từ Đề xuất là khách lạnh — mô tả đầy đủ và giá khớp là 2 thứ quyết định họ có mua hay không."
+  };
+  function renderTraffic(metric){
+    var box = document.getElementById("trafficBars");
+    box.innerHTML = "";
+    trafficData[metric].forEach(function(r){
+      var row = document.createElement("div"); row.className = "bar-row";
+      row.innerHTML = '<span class="bl"></span><div class="bar-track"><div class="bar-fill '+r.cls+'" style="width:'+r.val+'%"></div></div><span class="bv"></span>';
+      row.querySelector(".bl").textContent = r.label;
+      row.querySelector(".bv").textContent = r.disp;
+      box.appendChild(row);
+    });
+    document.getElementById("trafficNote").textContent = trafficNote[metric];
+  }
+  document.querySelectorAll("[data-metric]").forEach(function(b){
+    b.addEventListener("click", function(){
+      document.querySelectorAll("[data-metric]").forEach(function(x){ x.classList.remove("on"); });
+      b.classList.add("on");
+      renderTraffic(b.getAttribute("data-metric"));
+    });
+  });
+  renderTraffic("rev");
+
+  /* ---- Sortable tables ---- */
+  function makeSortable(tableId){
+    var table = document.getElementById(tableId); if(!table) return;
+    var dir = {};
+    table.querySelectorAll("th.sortable").forEach(function(th){
+      th.addEventListener("click", function(){
+        var key = th.getAttribute("data-sort");
+        dir[key] = !dir[key];
+        var rows = Array.prototype.slice.call(table.querySelectorAll("tbody tr"));
+        rows.sort(function(a,b){
+          var va = parseFloat(a.getAttribute("data-"+key)), vb = parseFloat(b.getAttribute("data-"+key));
+          if(isNaN(va) || isNaN(vb)){
+            var sa = (a.getAttribute("data-"+key)||""), sb = (b.getAttribute("data-"+key)||"");
+            return dir[key] ? sa.localeCompare(sb,"vi") : sb.localeCompare(sa,"vi");
+          }
+          return dir[key] ? va - vb : vb - va;
+        });
+        var tb = table.querySelector("tbody");
+        rows.forEach(function(r){ tb.appendChild(r); });
+      });
+    });
+  }
+  makeSortable("prodTable");
+  makeSortable("compTable");
+
+  /* ---- Budget simulator ----
+     Split of restore pool follows last month's proven per-product spend pattern (total 3.38tr actual,
+     DIP weighted highest per ROAS 22.86). Growth pool: scale winners + test high-conversion low-traffic SKUs. */
+  var restoreSplit = [
+    {name:"DIP (Diptyque) — ROAS 22,86", pct:0.32},
+    {name:"Daisy", pct:0.09},
+    {name:"Odyssey", pct:0.09},
+    {name:"Bloom (Gucci Flora)", pct:0.09},
+    {name:"Ultra Male", pct:0.06},
+    {name:"Hawas", pct:0.06},
+    {name:"Các mã còn lại (rải nhỏ)", pct:0.49}
+  ];
+  var growthSplit = [
+    {name:"Tăng ngân sách mã đang chạy tốt (DIP, Bloom, Odyssey)", pct:0.65},
+    {name:"Thử mã chuyển đổi cao, ít traffic (Signa.ture 9,76% · The Only One 12,50%)", pct:0.35}
+  ];
+  function fmt(n){ return Math.round(n/1000).toLocaleString("vi-VN") + "k"; }
+  function fmtFull(n){ return Math.round(n).toLocaleString("vi-VN") + "đ"; }
+  function renderBudget(){
+    var total = parseFloat(document.getElementById("budgetRange").value);
+    document.getElementById("budgetTotal").textContent = fmtFull(total);
+    var restore = total*0.7, growth = total*0.3;
+    var box = document.getElementById("budgetRows"); box.innerHTML = "";
+    function addGroup(title, pool, list){
+      var h = document.createElement("p");
+      h.style.cssText = "font-weight:700;margin:12px 0 2px;font-size:13.5px";
+      h.textContent = title + " — " + fmt(pool);
+      box.appendChild(h);
+      list.forEach(function(it){
+        var amt = pool*it.pct;
+        var row = document.createElement("div");
+        row.style.cssText = "padding:6px 0;border-bottom:1px dashed var(--line)";
+        row.innerHTML = '<div style="display:flex;justify-content:space-between;gap:12px;font-size:13.5px"><span></span><b style="white-space:nowrap"></b></div><div class="bar-track" style="margin-top:5px"><div class="bar-fill" style="width:'+Math.max(4,it.pct*100)+'%"></div></div>';
+        row.querySelector("span").textContent = it.name;
+        row.querySelector("b").textContent = fmt(amt);
+        box.appendChild(row);
+      });
+    }
+    addGroup("Khôi phục (70%)", restore, restoreSplit);
+    addGroup("Tăng trưởng (30%)", growth, growthSplit);
+    // Expectation: last month 3.38tr spend -> 46.2tr ad revenue (ROAS 13.67). Assume ROAS decays as spend rises.
+    var roas = total<=3380000 ? 13.67 : Math.max(8, 13.67 - (total-3380000)/1000000*1.1);
+    var adRev = total*roas/1000000;
+    var totalGmvDay = (57.3 + Math.max(0, adRev-46.2)) / 30;
+    document.getElementById("budgetExpect").innerHTML =
+      "Kỳ vọng với ROAS ~" + roas.toFixed(1).replace(".",",") + " (giả định giảm dần khi tăng chi): doanh thu quảng cáo ≈ <b>" +
+      adRev.toFixed(1).replace(".",",") + "tr/tháng</b>, tổng GMV ≈ <b>" + totalGmvDay.toFixed(1).replace(".",",") +
+      "tr/ngày</b>. Ads một mình chưa đủ chạm 3tr/ngày — phần còn lại nhờ bundle/set và live/flash sale.";
+  }
+  document.getElementById("budgetRange").addEventListener("input", renderBudget);
+  renderBudget();
+
+  apply();
+})();
+</script>
+</body>
+</html>
